@@ -1,0 +1,1 @@
+docker build -t imgdb:v1 .
