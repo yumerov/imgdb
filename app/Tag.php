@@ -12,4 +12,8 @@ class Tag extends Model
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
+
+    public function images() {
+        return $this->belongsToMany(Image::class);
+    }
 }
