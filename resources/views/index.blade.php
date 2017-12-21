@@ -21,7 +21,9 @@
     <div class="container">
       <h1 class="title">Recent tags</h1>
       @foreach ($tags as $tag)
-        <a class="button is-light" href="#">{{ $tag->name }}</a>
+        <a class="button is-light" href="{{ route("tags.show", $tag->slug) }}">
+          {{ $tag->name }}
+        </a>
       @endforeach
     </div>
   </section>

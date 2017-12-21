@@ -12,3 +12,4 @@
 */
 
 Route::get('/', "HomeController@index");
+Route::resource('tags', TagsController::class);
