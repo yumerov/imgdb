@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
-use Illuminate\Http\Request;
 use App\Actions\Tags\Show;
+use App\Actions\Tags\Create;
+use App\Actions\Tags\Store;
+use App\Http\Requests\TagStoreRequest;
+use Illuminate\Http\Request;
 
 class TagsController extends Controller
 {
@@ -25,7 +28,7 @@ class TagsController extends Controller
      */
     public function create()
     {
-        throw new \Exception("Not implemented yet");
+        return (new Create)->handle();
     }
 
     /**
@@ -34,9 +37,9 @@ class TagsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagStoreRequest $request)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Store)->handle($request);
     }
 
     /**

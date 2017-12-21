@@ -8,7 +8,7 @@
       </div>
       <div class="columns">
         @foreach ($images as $image)
-          <figure class="column  is-one-quarter">
+          <figure class="column is-one-quarter">
             <img src="{{ asset("/images/" . $image->file) }}" class="image">
             <figcaption>{{ $image->title }}</figcaption>
           </figure>

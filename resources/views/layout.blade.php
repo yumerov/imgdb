@@ -35,6 +35,9 @@
             <a class="navbar-item">
               Tags
             </a>
+            <a class="navbar-item" href="{{ route("tags.create") }}">
+              Create tag
+            </a>
           </div>
         </div>
       </div>
