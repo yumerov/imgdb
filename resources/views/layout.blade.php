@@ -42,9 +42,7 @@
   </div>
     <div class="hero-body">
       <div class="container">
-        <div class="columns">
           @yield("main")
-        </div>
       </div>
     </div>
 
