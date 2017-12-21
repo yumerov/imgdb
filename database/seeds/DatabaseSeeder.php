@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(TagSeeder::class);
+        Schema::enableForeignKeyConstraints();
         $this->call(ImageSeeder::class);
+        Schema::disableForeignKeyConstraints();
     }
 }
