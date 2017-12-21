@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 class Store {
 
     public function handle(TagStoreRequest $request) {
-        dd($request->all());
+        Tag::create($request->only("name"));
+
+        return back()->with("success", "The tag is created.");
     }
 }
