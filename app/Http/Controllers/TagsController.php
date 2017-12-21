@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use App\Actions\Tags\Index;
 use App\Actions\Tags\Show;
 use App\Actions\Tags\Create;
 use App\Actions\Tags\Store;
@@ -18,7 +19,7 @@ class TagsController extends Controller
      */
     public function index()
     {
-        throw new \Exception("Not implemented yet");
+        return (new Index)->handle();
     }
 
     /**
