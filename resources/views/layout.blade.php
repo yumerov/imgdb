@@ -32,6 +32,9 @@
             <a class="navbar-item" href="{{ route("images.index") }}">
               Images
             </a>
+            <a class="navbar-item" href="{{ route("images.create") }}">
+              Create image
+            </a>
             <a class="navbar-item" href="{{ route("tags.index") }}">
               Tags
             </a>
