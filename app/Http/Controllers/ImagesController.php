@@ -9,6 +9,7 @@ use App\Actions\Images\Store;
 use App\Actions\Images\Show;
 use App\Actions\Images\Edit;
 use App\Actions\Images\Update;
+use App\Actions\Images\Destroy;
 use App\Http\Requests\ImageStoreRequest;
 use App\Http\Requests\ImageUpdateRequest;
 use Illuminate\Http\Request;
@@ -88,6 +89,6 @@ class ImagesController extends Controller
      */
     public function destroy(Image $image)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Destroy)->handle($image);
     }
 }

@@ -16,6 +16,12 @@
           @endforeach
 
           <a href="{{ route("images.edit", $image) }}" class="button is-dark">Edit</a>
+          <form action="{{ route("images.destroy", $image) }}" method="post">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <input type="submit" value="Delete">
+          </form>
+
 
           <p>at TODO: related images based on common tags</p>
         </div>
