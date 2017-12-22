@@ -6,6 +6,12 @@
       <div class="columns">
         <div class="column is-one-quarter">
           <h1>{{ $tag->name }} [<a href="{{ route("tags.edit", $tag->slug) }}">edit</a>]</h1>
+          <form action="{{ route("tags.destroy", $tag->slug) }}" method="post">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <input type="submit" value="Delete">
+          </form>
+
 
         </div>
         <div class="column is-three-quarters">

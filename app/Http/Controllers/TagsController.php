@@ -9,6 +9,7 @@ use App\Actions\Tags\Edit;
 use App\Actions\Tags\Update;
 use App\Actions\Tags\Create;
 use App\Actions\Tags\Store;
+use App\Actions\Tags\Destroy;
 use App\Http\Requests\TagStoreRequest;
 use App\Http\Requests\TagUpdateRequest;
 use Illuminate\Http\Request;
@@ -88,6 +89,6 @@ class TagsController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Destroy)->handle($tag);
     }
 }
