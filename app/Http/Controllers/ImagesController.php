@@ -7,8 +7,10 @@ use App\Actions\Images\Index;
 use App\Actions\Images\Create;
 use App\Actions\Images\Store;
 use App\Actions\Images\Show;
+use App\Actions\Images\Edit;
+use App\Actions\Images\Update;
 use App\Http\Requests\ImageStoreRequest;
-// use App\Http\Requests\ImageUpdateRequest;
+use App\Http\Requests\ImageUpdateRequest;
 use Illuminate\Http\Request;
 
 class ImagesController extends Controller
@@ -63,7 +65,7 @@ class ImagesController extends Controller
      */
     public function edit(Image $image)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Edit)->handle($image);
     }
 
     /**
@@ -73,9 +75,9 @@ class ImagesController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(ImageUpdateRequest $request, Image $image)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Update)->handle($request, $image);
     }
 
     /**

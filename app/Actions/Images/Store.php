@@ -14,7 +14,7 @@ class Store {
         $file = $request->file('file');
         $image = new Image;
         $image->title = $request->input('title');
-        $image->file = $image->slug . '.' . $file->clientExtension();
+        $image->file = md5(microtime()) . '.' . $file->clientExtension();
         $file->move(public_path('/img/'), $image->file);
         $image->save();
 

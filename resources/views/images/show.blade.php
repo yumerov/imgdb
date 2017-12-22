@@ -15,6 +15,8 @@
             @include("shared.tag", ["tag" => $tag])
           @endforeach
 
+          <a href="{{ route("images.edit", $image) }}" class="button is-dark">Edit</a>
+
           <p>at TODO: related images based on common tags</p>
         </div>
       </div>
