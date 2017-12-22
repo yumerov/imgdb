@@ -6,6 +6,7 @@ use App\Image;
 use App\Actions\Images\Index;
 use App\Actions\Images\Create;
 use App\Actions\Images\Store;
+use App\Actions\Images\Show;
 use App\Http\Requests\ImageStoreRequest;
 // use App\Http\Requests\ImageUpdateRequest;
 use Illuminate\Http\Request;
@@ -51,8 +52,7 @@ class ImagesController extends Controller
      */
     public function show(Image $image)
     {
-        dd($image);
-        throw new \Exception("Not implemented yet");
+        return (new Show)->handle($image);
     }
 
     /**
