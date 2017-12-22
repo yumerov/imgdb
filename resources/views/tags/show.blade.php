@@ -5,8 +5,7 @@
     <div class="container">
       <div class="columns">
         <div class="column is-one-quarter">
-          <h1>{{ $tag->name }}</h1>
-
+          <h1>{{ $tag->name }} [<a href="{{ route("tags.edit", $tag->slug) }}">edit</a>]</h1>
 
         </div>
         <div class="column is-three-quarters">

@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Tag;
 use App\Actions\Tags\Index;
 use App\Actions\Tags\Show;
+use App\Actions\Tags\Edit;
+use App\Actions\Tags\Update;
 use App\Actions\Tags\Create;
 use App\Actions\Tags\Store;
 use App\Http\Requests\TagStoreRequest;
+use App\Http\Requests\TagUpdateRequest;
 use Illuminate\Http\Request;
 
 class TagsController extends Controller
@@ -51,7 +54,7 @@ class TagsController extends Controller
      */
     public function show(Tag $tag)
     {
-        return (new Show())->handle($tag);
+        return (new Show)->handle($tag);
     }
 
     /**
@@ -62,7 +65,7 @@ class TagsController extends Controller
      */
     public function edit(Tag $tag)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Edit)->handle($tag);
     }
 
     /**
@@ -72,9 +75,9 @@ class TagsController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(TagUpdateRequest $request, Tag $tag)
     {
-        throw new \Exception("Not implemented yet");
+        return (new Update)->handle($request, $tag);
     }
 
     /**
