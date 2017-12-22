@@ -29,7 +29,7 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item">
+            <a class="navbar-item" href="{{ route("images.index") }}">
               Images
             </a>
             <a class="navbar-item" href="{{ route("tags.index") }}">

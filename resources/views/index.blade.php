@@ -9,7 +9,7 @@
       <div class="columns">
         @foreach ($images as $image)
           <figure class="column is-one-quarter">
-            <img src="{{ asset("/images/" . $image->file) }}" class="image">
+            <img src="{{ asset("/img/" . $image->file) }}" class="image">
             <figcaption>{{ $image->title }}</figcaption>
           </figure>
         @endforeach
@@ -21,9 +21,7 @@
     <div class="container">
       <h1 class="title">Recent tags</h1>
       @foreach ($tags as $tag)
-        <a class="button is-light" href="{{ route("tags.show", $tag->slug) }}">
-          {{ $tag->name }}
-        </a>
+        @include("shared.tag", ['tag' => $tag])
       @endforeach
     </div>
   </section>
