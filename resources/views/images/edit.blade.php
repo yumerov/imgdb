@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section("title", "edit - " . $image->title)
+
 @section("main")
   <section class="section">
     <div class="container">

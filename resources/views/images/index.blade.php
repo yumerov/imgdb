@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section("title", "images")
+
 @section("main")
 <section class="section">
     <div class="container">

@@ -53,7 +53,7 @@
       <div class="container">
         <div class="tabs is-centered">
           <ul>
-            <li><a>And this at the bottom</a></li>
+            <li><a>{{ config('app.name') }} - {{ date('Y') }}</a></li>
           </ul>
         </div>
       </div>
