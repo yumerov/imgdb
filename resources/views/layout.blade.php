@@ -62,6 +62,6 @@
       </div>
     </div>
   </section>
-  <script async type="text/javascript" src="../js/bulma.js"></script>
+  <script async type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>

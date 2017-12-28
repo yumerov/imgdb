@@ -15,6 +15,15 @@
           </div>
         </div>
 
+        <div class="field">
+          <div class="control">
+              <select multiple data-placeholder="Select tags">
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+          </div>
+        </div>
+
         <div class="file">
           <label class="file-label">
             <input class="file-input" type="file" name="file">
