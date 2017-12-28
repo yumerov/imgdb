@@ -11,8 +11,6 @@ use Illuminate\Http\Request;
 class Store {
 
     public function handle(ImageStoreRequest $request) {
-        // dd($request->input("tags"));
-
         $file = $request->file('file');
         $image = new Image;
         $image->title = $request->input('title');

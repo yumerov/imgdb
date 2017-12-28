@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<html>
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,6 +61,6 @@
       </div>
     </div>
   </section>
-  <script async type="text/javascript" src="../js/app.js"></script>
+  <script async type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

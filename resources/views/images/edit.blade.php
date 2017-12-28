@@ -16,6 +16,17 @@
           </div>
         </div>
 
+        <div class="field">
+          <div class="control">
+              <select name="tags[]" multiple data-placeholder="Select tags">
+                @foreach ($tags as $tag)
+                <option value="{{ $tag->id }}"
+                  {{{ in_array($tag->id, $selected_tags) ? 'selected="selected"' : "" }}}>{{ $tag->name }}</option>
+                @endforeach
+              </select>
+          </div>
+        </div>
+
         <div class="file">
           <label class="file-label">
             <input class="file-input" type="file" name="file">

@@ -22,6 +22,7 @@ class Update {
         } else {
             $image->update($request->only('title'));
         }
+        $image->tags()->sync($request->input("tags"));
 
         return redirect()->route("images.edit", [$image])
             ->with("success", "The image is updated.");
