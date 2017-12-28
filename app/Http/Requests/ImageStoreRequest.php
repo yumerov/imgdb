@@ -16,6 +16,7 @@ class ImageStoreRequest extends BaseRequest
     {
         return [
             'title' => 'required|unique:images',
+            'tags' => 'required|array|min:1',
             'file' => 'required|image|max:5000',
         ];
     }

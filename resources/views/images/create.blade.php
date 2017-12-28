@@ -17,9 +17,10 @@
 
         <div class="field">
           <div class="control">
-              <select multiple data-placeholder="Select tags">
-                <option>Select dropdown</option>
-                <option>With options</option>
+              <select name="tags[]" multiple data-placeholder="Select tags">
+                @foreach ($tags as $tag)
+                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                @endforeach
               </select>
           </div>
         </div>
