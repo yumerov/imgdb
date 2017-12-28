@@ -6,9 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
-      <title>Laravel {{ app()->version() }}</title>
-
-      <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
+      <title>{{ config('app.name') }} - @yield('title')</title>
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 <body>
@@ -17,8 +15,8 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="../">
-            <img src="../images/bulma.png" alt="Logo">
+          <a class="navbar-item" href="/">
+            <h1>{{ config('app.name') }}</h1>
           </a>
           <span class="navbar-burger burger" data-target="navbarMenu">
             <span></span>
@@ -32,13 +30,13 @@
               Images
             </a>
             <a class="navbar-item" href="{{ route("images.create") }}">
-              Create image
+              Create a image
             </a>
             <a class="navbar-item" href="{{ route("tags.index") }}">
               Tags
             </a>
             <a class="navbar-item" href="{{ route("tags.create") }}">
-              Create tag
+              Create a tag
             </a>
           </div>
         </div>

@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section("title", "home")
+
 @section("main")
   <section class="section">
     <div class="container">
@@ -8,10 +10,7 @@
       </div>
       <div class="columns">
         @foreach ($images as $image)
-          <figure class="column is-one-quarter">
-            <img src="{{ asset("/img/" . $image->file) }}" class="image">
-            <figcaption>{{ $image->title }}</figcaption>
-          </figure>
+          @include("shared.image-thumb", ["image" => $image])
         @endforeach
       </div>
     </div>
