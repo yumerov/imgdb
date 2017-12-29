@@ -13,8 +13,8 @@
         </div>
         <div class="column is-one-quarter">
           <h1 class="title">
-            {{ $image->title }} <a href="{{ route("images.edit", $image) }}" class="icon is-small is-dark"><i class="fa fa-edit"></i></a>
-            <button type="submit" class="icon is-small is-danger" form="image-delete"><i class="fa fa-remove"></i></button>
+            {{ $image->title }} <a href="{{ route("images.edit", $image) }}" class="button is-small is-dark"><i class="fa fa-edit"></i></a>
+            <button type="submit" class="button is-small is-danger" form="image-delete"><i class="fa fa-remove"></i></button>
           </h1>
           <form id="image-delete" action="{{ route("images.destroy", $image) }}" method="post">
             {{ csrf_field() }}

@@ -34,7 +34,11 @@
               <span class="file-icon"><i class="fa fa-upload"></i></span>
               <span class="file-label">Choose a file…</span>
             </span>
+            <span class="file-name"></span>
           </label>
+          <figure class="image is-128x128">
+            <img src="" id="preview">
+          </figure>
         </div>
         @include("shared.field-error", ["field" => "file"])
 

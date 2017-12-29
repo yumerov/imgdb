@@ -10335,13 +10335,6 @@ module.exports = __webpack_require__(4);
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 // require('./bootstrap');
 
 // window.Vue = require('vue');
@@ -10353,8 +10346,25 @@ __webpack_require__(3);
 window.$ = window.jQuery = __webpack_require__(0);
 
 $(document).ready(function () {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
     $('select').select2({
         theme: "flat"
+    });
+
+    $('input[type="file"]').change(function (event) {
+        var target = event.target;
+        var name = target.files[0].name;
+        $(target).siblings('.file-name').html(name);
+        readURL(target);
     });
 });
 
