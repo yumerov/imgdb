@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\TagRequest;
+use App\Http\Requests\BaseRequest;
 
-class TagUpdateRequest extends TagRequest
+class TagUpdateRequest extends BaseRequest
 {
 
     /**

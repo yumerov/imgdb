@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\BaseRequest;
 
-class TagStoreRequest extends BaseRequest
+class ImageUpdateRequest extends BaseRequest
 {
 
     /**
@@ -15,7 +15,8 @@ class TagStoreRequest extends BaseRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:tags',
+            'title' => 'required|unique:images,title,' . $this->image->id,
+            'file' => 'nullable|image|max:5000',
         ];
     }
 }

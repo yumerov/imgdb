@@ -11,4 +11,14 @@ class Image extends Model
     public function tags() {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function setTitleAttribute($value) {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = str_slug($value);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
