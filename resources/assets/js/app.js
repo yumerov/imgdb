@@ -1,25 +1,32 @@
+// require('./bootstrap');
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
-window.Vue = require('vue');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+// window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// const app = new Vue({ el: '#app' });
+// require('./bulma-extensions');
 
-const app = new Vue({
-    el: '#app'
+require('select2');
+window.$ = window.jQuery = require('jquery');
+
+$(document).ready(() => {
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          $('#preview').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $('select').select2({
+        theme: "flat"
+    });
+
+    $('input[type="file"]').change((event) => {
+        let target = event.target;
+        let name = target.files[0].name;
+        $(target).siblings('.file-name').html(name);
+        readURL(target);
+    });
 });
-
-
-require('./bulma-extensions');

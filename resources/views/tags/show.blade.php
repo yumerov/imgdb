@@ -19,7 +19,7 @@
             @foreach ($tag->images as $image)
             <a href="#" class="column is-one-quarter">
               <figure class="image">
-                <img src="{{ asset("/images/" . $image->file) }}" class="image">
+                <img src="{{ asset("/img/" . $image->file) }}" class="image">
                 <figcaption>{{ $image->title }}</figcaption>
               </figure>
             </a>

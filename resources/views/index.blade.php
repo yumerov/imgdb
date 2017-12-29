@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section("title", "home")
+
 @section("main")
   <section class="section">
     <div class="container">
@@ -8,10 +10,7 @@
       </div>
       <div class="columns">
         @foreach ($images as $image)
-          <figure class="column is-one-quarter">
-            <img src="{{ asset("/images/" . $image->file) }}" class="image">
-            <figcaption>{{ $image->title }}</figcaption>
-          </figure>
+          @include("shared.image-thumb", ["image" => $image])
         @endforeach
       </div>
     </div>
@@ -21,9 +20,7 @@
     <div class="container">
       <h1 class="title">Recent tags</h1>
       @foreach ($tags as $tag)
-        <a class="button is-light" href="{{ route("tags.show", $tag->slug) }}">
-          {{ $tag->name }}
-        </a>
+        @include("shared.tag", ['tag' => $tag])
       @endforeach
     </div>
   </section>
