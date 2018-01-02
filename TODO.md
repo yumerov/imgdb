@@ -11,7 +11,7 @@
 - [ ] image pages
     * [x] api
     * [x] index
-    * [ ] show
+    * [x] show
     * [ ] create
     * [ ] store
     * [ ] edit
