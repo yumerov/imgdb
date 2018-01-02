@@ -21,4 +21,8 @@ class Image extends Model
     {
         return 'slug';
     }
+
+    public function getUrlAttribute() {
+        return asset("/img/" . $this->file);
+    }
 }

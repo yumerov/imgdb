@@ -6,16 +6,9 @@
             @yield("main")
         </div>
       </div> -->
+        <app-footer></app-footer>
 
-      <!-- <div class="hero-foot">
-        <div class="container">
-          <div class="tabs is-centered">
-            <ul>
-              <li><a>{{ config('app.name') }} - {{ date('Y') }}</a></li>
-            </ul>
-          </div>
-        </div>
-      </div> -->
+
     </section>
 </template>
 

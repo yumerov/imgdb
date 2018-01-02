@@ -216,8 +216,10 @@ module.exports = __webpack_require__(14);
 window.Vue = __webpack_require__(4);
 Vue.component('app', __webpack_require__(8));
 Vue.component('app-header', __webpack_require__(11));
+Vue.component('app-footer', __webpack_require__(33));
 Vue.component('nav-item', __webpack_require__(30));
 var app = new Vue({ el: '#app' });
+Vue.component('home-main', __webpack_require__(36));
 // require('./bulma-extensions');
 
 // require('select2');
@@ -11572,13 +11574,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: []
@@ -11595,7 +11590,7 @@ var render = function() {
   return _c(
     "section",
     { staticClass: "hero is-fullheight is-default is-bold" },
-    [_c("app-header")],
+    [_c("app-header"), _vm._v(" "), _c("app-footer")],
     1
   )
 }
@@ -11690,7 +11685,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        logo: function logo() {
+            return window.data.app.name;
+        }
+    }
+});
 
 /***/ }),
 /* 13 */
@@ -11703,7 +11704,13 @@ var render = function() {
   return _c("div", { staticClass: "hero-head" }, [
     _c("nav", { staticClass: "navbar" }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "navbar-brand" }, [
+          _c("a", { staticClass: "navbar-item", attrs: { href: "/" } }, [
+            _c("h1", [_vm._v(_vm._s(_vm.logo))])
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "navbar-menu", attrs: { id: "navbarMenu" } }, [
           _c(
@@ -11734,18 +11741,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-brand" }, [
-      _c("a", { staticClass: "navbar-item", attrs: { href: "/" } }),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          staticClass: "navbar-burger burger",
-          attrs: { "data-target": "navbarMenu" }
-        },
-        [_c("span"), _vm._v(" "), _c("span"), _vm._v(" "), _c("span")]
-      )
-    ])
+    return _c(
+      "span",
+      {
+        staticClass: "navbar-burger burger",
+        attrs: { "data-target": "navbarMenu" }
+      },
+      [_c("span"), _vm._v(" "), _c("span"), _vm._v(" "), _c("span")]
+    )
   }
 ]
 render._withStripped = true
@@ -11859,6 +11862,247 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-6cf40fef", module.exports)
+  }
+}
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(34)
+/* template */
+var __vue_template__ = __webpack_require__(35)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Footer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-083ff5dc", Component.options)
+  } else {
+    hotAPI.reload("data-v-083ff5dc", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        footer: function footer() {
+            var d = window.data;
+            return d.app.name + " - " + d.year;
+        }
+    }
+});
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "hero-foot" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "tabs is-centered" }, [
+        _c("ul", [_c("li", [_c("a", [_vm._v(_vm._s(_vm.footer))])])])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-083ff5dc", module.exports)
+  }
+}
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(37)
+/* template */
+var __vue_template__ = __webpack_require__(38)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/mains/Home.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-beeb112a", Component.options)
+  } else {
+    hotAPI.reload("data-v-beeb112a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: []
+});
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "hero-body" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("section", { staticClass: "section" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "columns" }, [
+              _c("h1", { staticClass: "title column" }, [
+                _vm._v("Recent images")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "columns" }, [
+              _vm._v(
+                '\n                @foreach ($images as $image)\n                  @include("shared.image-thumb", ["image" => $image])\n                @endforeach\n              '
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", { staticClass: "section" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("h1", { staticClass: "title" }, [_vm._v("Recent tags")]),
+            _vm._v(
+              "\n              @foreach ($tags as $tag)\n                @include(\"shared.tag\", ['tag' => $tag])\n              @endforeach\n            "
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-beeb112a", module.exports)
   }
 }
 

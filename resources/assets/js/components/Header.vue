@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
-                        <!-- <h1>{{ config('app.name') }}</h1> -->
+                        <h1>{{ logo }}</h1>
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
@@ -27,6 +27,10 @@
 
 <script>
 export default {
-
+    computed: {
+        logo() {
+            return window.data.app.name;
+        }
+    }
 }
 </script>
