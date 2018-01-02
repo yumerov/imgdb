@@ -1,15 +1,18 @@
-// require('./bootstrap');
+require("./bootstrap");
 
 window.Vue = require('vue');
-window.axios = require('axios');
-Vue.component('app', require('./components/App.vue'));
-Vue.component('app-header', require('./components/Header.vue'));
-Vue.component('app-footer', require('./components/Footer.vue'));
-Vue.component('nav-item', require('./components/NavItem.vue'));
-Vue.component('home-main', require('./components/mains/Home.vue'));
-Vue.component('image-thumb', require('./components/shared/ImageThumb.vue'));
-Vue.component('tag', require('./components/shared/Tag.vue'));
-const app = new Vue({ el: '#app' });
+window.VueRouter = require("vue-router");
+window.Vue.use(VueRouter);
+
+require('./components');
+import routes from './routes';
+import VueRouter from "vue-router";
+
+const router = new VueRouter({ routes });
+const app = new Vue({
+    el: '#app',
+    router,
+});
 // require('./bulma-extensions');
 
 // require('select2');

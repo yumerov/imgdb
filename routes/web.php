@@ -13,4 +13,3 @@
 
 Route::get('/', "HomeController@index");
 Route::resource('tags', TagsController::class);
-Route::resource('images', ImagesController::class);

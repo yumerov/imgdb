@@ -32,7 +32,7 @@ export default {
     },
     mounted() {
         let self = this;
-        axios.get("/api/recent/images")
+        axios.get("/api/images")
         .then((response) => {
             self.images = response.data.data;
         });

@@ -1,10 +1,10 @@
 <template>
-    <a :href="image.self" class="column is-one-quarter">
+    <router-link :to="/images/ + image.slug" class="column is-one-quarter">
         <figure class="">
             <img :src="image.file" class="image">
             <figcaption v-text="image.title"></figcaption>
         </figure>
-    </a>
+    </router-link>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    <a class="navbar-item" :href="link">{{ label }}</a>
+    <router-link class="navbar-item" :to="link">{{ label }}</router-link>
 </template>
 
 <script>

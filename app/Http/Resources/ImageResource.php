@@ -19,7 +19,7 @@ class ImageResource extends Resource
             'title' => $this->title,
             'slug' => $this->slug,
             'file' => $this->url,
-            "self" => "todo-lkater",
+            "self" => route("images.show", $this->slug),
         ];
     }
 }
