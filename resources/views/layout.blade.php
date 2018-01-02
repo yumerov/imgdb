@@ -10,55 +10,9 @@
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 <body>
-  <section class="hero is-fullheight is-default is-bold">
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <h1>{{ config('app.name') }}</h1>
-          </a>
-          <span class="navbar-burger burger" data-target="navbarMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenu" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="{{ route("images.index") }}">
-              Images
-            </a>
-            <a class="navbar-item" href="{{ route("images.create") }}">
-              Create a image
-            </a>
-            <a class="navbar-item" href="{{ route("tags.index") }}">
-              Tags
-            </a>
-            <a class="navbar-item" href="{{ route("tags.create") }}">
-              Create a tag
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <div id="app">
+    <app></app>
   </div>
-    <div class="hero-body">
-      <div class="container">
-          @yield("main")
-      </div>
-    </div>
-
-    <div class="hero-foot">
-      <div class="container">
-        <div class="tabs is-centered">
-          <ul>
-            <li><a>{{ config('app.name') }} - {{ date('Y') }}</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
   <script async type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
