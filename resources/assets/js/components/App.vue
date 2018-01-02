@@ -1,14 +1,8 @@
 <template>
     <section class="hero is-fullheight is-default is-bold">
         <app-header></app-header>
-      <!-- <div class="hero-body">
-        <div class="container">
-            @yield("main")
-        </div>
-      </div> -->
+        <home-main></home-main>
         <app-footer></app-footer>
-
-
     </section>
 </template>
 

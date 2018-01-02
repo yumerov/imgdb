@@ -7,9 +7,7 @@
                   <h1 class="title column">Recent images</h1>
                 </div>
                 <div class="columns">
-                  @foreach ($images as $image)
-                    @include("shared.image-thumb", ["image" => $image])
-                  @endforeach
+                    <image-thumb v-for="image in images" :image="image"></image-thumb>
                 </div>
               </div>
             </section>
@@ -17,9 +15,7 @@
             <section class="section">
               <div class="container">
                 <h1 class="title">Recent tags</h1>
-                @foreach ($tags as $tag)
-                  @include("shared.tag", ['tag' => $tag])
-                @endforeach
+                <tag v-for="tag in tags" :tag="tag"></tag>
               </div>
             </section>
         </div>
@@ -28,6 +24,22 @@
 
 <script>
 export default {
-    props: []
+    data() {
+        return {
+            images: [],
+            tags: [],
+        }
+    },
+    mounted() {
+        let self = this;
+        axios.get("/api/recent/images")
+        .then((response) => {
+            self.images = response.data.data;
+        });
+        axios.get("/api/recent/tags")
+        .then((response) => {
+            self.tags = response.data.data;
+        });
+    }
 }
 </script>
