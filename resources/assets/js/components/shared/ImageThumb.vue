@@ -9,6 +9,6 @@
 
 <script>
 export default {
-    props: ['image']
+    props: ['image'],
 }
 </script>

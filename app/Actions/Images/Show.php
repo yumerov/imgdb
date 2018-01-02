@@ -3,12 +3,11 @@
 namespace App\Actions\Images;
 
 use App\Image;
+use App\Http\Resources\ImageResource;
 
 class Show {
 
     public function handle(Image $image) {
-        $template = "images.show";
-        $data = ['image' => $image];
-        return view($template, $data);
+        return new ImageResource($image);
     }
 }

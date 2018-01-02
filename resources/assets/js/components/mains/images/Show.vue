@@ -14,9 +14,7 @@
           {{ csrf_field() }}
           {{ method_field('DELETE') }}
         </form> -->
-        @foreach ($image->tags as $tag)
-          @include("shared.tag", ["tag" => $tag])
-        @endforeach
+        <tag v-for="tag in image.tags" :tag="tag"></tag>
         <p>at TODO: related images based on common tags</p>
       </div>
     </div>
@@ -24,6 +22,17 @@
 
 <script>
 export default {
-    prop: ["image"]
+    data() {
+        return {
+            image: {},
+        };
+    },
+    created() {
+        let vm = this;
+        let url = "/api/images/" + this.$route.params.slug;
+        axios.get(url).then((response) => {
+            vm.image = response.data.data;
+        });
+    }
 }
 </script>
