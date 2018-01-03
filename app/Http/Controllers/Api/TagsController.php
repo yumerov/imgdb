@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Tag;
 use App\Actions\Tags\Index;
@@ -12,6 +12,8 @@ use App\Actions\Tags\Store;
 use App\Actions\Tags\Destroy;
 use App\Http\Requests\TagStoreRequest;
 use App\Http\Requests\TagUpdateRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\TagResource;
 use Illuminate\Http\Request;
 
 class TagsController extends Controller
@@ -23,7 +25,7 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return (new Index)->handle();
+        return TagResource::collection(Tag::select(['id', 'name'])->get());
     }
 
     /**

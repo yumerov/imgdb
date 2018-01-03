@@ -19,7 +19,8 @@
         "lodash": "^4.17.4",
         "vue": "^2.1.10",
         "vue-router": "^3.0.1",
-        "select2": "^4.0",
+        "vue-select": "^2.3",
+        "vee-validate": "^2.0",
         "font-awesome": "^4.7",
         "laravel-vue-bulma-pagination": "^1.0.1"
     }

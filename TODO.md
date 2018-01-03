@@ -19,7 +19,10 @@
     * [ ] delete
 - [ ] tag pages
     * [ ] api
+    * [ ] index
     * [ ] show
     * [ ] create
+    * [ ] store
     * [ ] edit
+    * [ ] update
     * [ ] delete

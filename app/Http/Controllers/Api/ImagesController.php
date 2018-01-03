@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Image;
-use App\Actions\Images\Index;
+use App\Http\Controllers\Controller;
 use App\Actions\Images\Create;
 use App\Actions\Images\Store;
 use App\Actions\Images\Show;
@@ -24,17 +23,8 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        return (new Index)->handle();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return (new Create)->handle();
+        $data = Image::orderBy("created_at", "desc")->paginate(12);
+        return ImageResource::collection($data);
     }
 
     /**
@@ -57,17 +47,6 @@ class ImagesController extends Controller
     public function show(Image $image)
     {
         return (new Show)->handle($image);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Image $image)
-    {
-        return (new Edit)->handle($image);
     }
 
     /**
