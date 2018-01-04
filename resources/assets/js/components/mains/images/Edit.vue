@@ -71,7 +71,18 @@ export default {
         let url = "/api/images/" + vm.$route.params.slug;
         axios.get(url)
             .then((response) => { vm.updateData(response.data.data); })
-            .catch((error) => { window.flash(error, "error"); });
+            .catch((error) => {
+                if (error.response.status == 404) {
+                    window.flash("Not found", "error");
+                    setTimeout(function() {
+                        window.location.hash = "#/images/";
+                        window.location.reload();
+                    }, 2000);
+                    return;
+                }
+
+                window.flash(error, "error");
+            });
 
     },
     methods: {

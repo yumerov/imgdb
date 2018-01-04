@@ -1,5 +1,6 @@
 <template>
     <div class="columns">
+        <my-flash></my-flash>
       <div class="column is-three-quarters">
         <figure>
           <img :src="image.file" class="image">
@@ -35,13 +36,24 @@ export default {
     created() {
         let vm = this;
         let url = "/api/images/" + this.$route.params.slug;
-        axios.get(url).then((response) => {
-            vm.image = response.data.data;
-            vm.links = {
-                edit: "/images/" + vm.image.slug + "/edit",
-                destroy: "/api/images/" + vm.image.slug,
-            }
-        });
+        axios.get(url)
+            .then((response) => {
+                vm.image = response.data.data;
+                vm.links = {
+                    edit: "/images/" + vm.image.slug + "/edit",
+                    destroy: "/api/images/" + vm.image.slug,
+                }
+            }).catch((error) => {
+                if (error.response.status == 404) {
+                    window.flash("Not found", "error");
+                } else {
+                    window.flash(data.message, "error");
+                }
+                setTimeout(function() {
+                    window.location.hash = "#/images/";
+                    window.location.reload();
+                }, 2000);
+            });
     }
 }
 </script>
