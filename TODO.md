@@ -15,8 +15,8 @@
     * [x] show
     * [x] create
     * [x] store
-    * [ ] edit
-    * [ ] update
+    * [x] edit
+    * [x] update
     * [ ] delete
 - [ ] tag pages
     * [ ] api

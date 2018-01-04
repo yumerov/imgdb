@@ -2,9 +2,9 @@
 
 ## Versions
 
-* Prototype (current)
+* v1
 	- basic functionality
 	- static pages(no SPA)
-* v1
+* v2 (current)
 	- Vue2 based SPA
 	- Migration to API
