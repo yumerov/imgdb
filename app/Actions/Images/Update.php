@@ -4,13 +4,12 @@ namespace App\Actions\Images;
 
 use App\Image;
 use App\Http\Requests\ImageUpdateRequest;
-
+use App\Http\Resources\ImageResource;
 
 class Update {
 
     public function handle(ImageUpdateRequest $request, Image $image) {
         $file = $request->file('file');
-
 
         if ($file) {
             \File::delete(public_path("/img/" . $image->file));
@@ -24,7 +23,6 @@ class Update {
         }
         $image->tags()->sync($request->input("tags"));
 
-        return redirect()->route("images.edit", [$image])
-            ->with("success", "The image is updated.");
+        return new ImageResource($image);
     }
 }

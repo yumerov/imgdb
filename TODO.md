@@ -13,8 +13,8 @@
     * [x] api
     * [x] index
     * [x] show
-    * [ ] create
-    * [ ] store
+    * [x] create
+    * [x] store
     * [ ] edit
     * [ ] update
     * [ ] delete

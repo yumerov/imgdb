@@ -19,8 +19,5 @@ class Store {
         $image->tags()->sync($request->input("tags"));
 
         return new ImageResource($image);
-
-        return redirect()->route("images.show", [$image->slug])
-            ->with("success", "The image is created.");
     }
 }

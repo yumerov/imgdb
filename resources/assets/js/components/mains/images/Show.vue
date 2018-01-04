@@ -7,7 +7,8 @@
       </div>
       <div class="column is-one-quarter">
         <h1 class="title">
-          {{ image.title }} <!-- <a href="{{ route("images.edit", $image) }}" class="button is-small is-dark"><i class="fa fa-edit"></i></a> -->
+          {{ image.title }} <router-link :to="links.edit"
+            class="button is-smallis-dark"><i class="fa fa-edit"></i></router-link>
           <!-- <button type="submit" class="button is-small is-danger" form="image-delete"><i class="fa fa-remove"></i></button> -->
         </h1>
         <!-- <form id="image-delete" action="{{ route("images.destroy", $image) }}" method="post">
@@ -25,6 +26,10 @@ export default {
     data() {
         return {
             image: {},
+            links: {
+                edit: "",
+                destroy: "",
+            }
         };
     },
     created() {
@@ -32,6 +37,10 @@ export default {
         let url = "/api/images/" + this.$route.params.slug;
         axios.get(url).then((response) => {
             vm.image = response.data.data;
+            vm.links = {
+                edit: "/images/" + vm.image.slug + "/edit",
+                destroy: "/api/images/" + vm.image.slug,
+            }
         });
     }
 }
