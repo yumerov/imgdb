@@ -21,6 +21,7 @@
         "vue-router": "^3.0.1",
         "vue-select": "^2.3",
         "vee-validate": "^2.0",
+        "vue-flash": "^2.1",
         "font-awesome": "^4.7",
         "laravel-vue-bulma-pagination": "^1.0.1"
     }

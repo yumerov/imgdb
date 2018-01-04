@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use App\Image;
 use App\Http\Controllers\Controller;
-use App\Actions\Images\Create;
 use App\Actions\Images\Store;
-use App\Actions\Images\Show;
 use App\Actions\Images\Edit;
 use App\Actions\Images\Update;
 use App\Actions\Images\Destroy;
 use App\Http\Requests\ImageStoreRequest;
 use App\Http\Requests\ImageUpdateRequest;
+use App\Http\Resources\ImageResource;
 use Illuminate\Http\Request;
 
 class ImagesController extends Controller
@@ -46,7 +45,7 @@ class ImagesController extends Controller
      */
     public function show(Image $image)
     {
-        return (new Show)->handle($image);
+        return new ImageResource($image);
     }
 
     /**

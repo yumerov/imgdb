@@ -12,3 +12,4 @@ Vue.component('home-main', require('./components/mains/Home.vue'));
 
 Vue.component('image-thumb', require('./components/shared/ImageThumb.vue'));
 Vue.component('tag', require('./components/shared/Tag.vue'));
+Vue.component('my-flash', require('./components/shared/Flash.vue'));

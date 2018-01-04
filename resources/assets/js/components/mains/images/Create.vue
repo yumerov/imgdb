@@ -1,7 +1,6 @@
 <template>
     <form ref="form" @submit.prevent>
-        <!-- @include("shared.success") -->
-      <!-- {{ csrf_field() }} -->
+        <my-flash></my-flash>
         <div class="field">
             <label class="label">Title</label>
             <div class="control">
@@ -16,7 +15,10 @@
         <div class="field">
             <div class="control">
                 <v-select multiple label="name" value="id" v-model="image.tags"
-                    :options="tags" class="is-danger"></v-select>
+                    :options="tags" :on-change="validateTags"
+                    :has-error="errors.has('tags')"></v-select>
+                <span v-if="errors.has('tags')" class="help is-danger"
+                    v-text="errors.first('tags')"></span>
             </div>
         </div>
 
@@ -28,18 +30,21 @@
                     <span class="file-icon"><i class="fa fa-upload"></i></span>
                     <span class="file-label">Choose a file…</span>
                 </span>
-                <span class="file-name" v-text="image.file.name"></span>
+                <span class="file-name" v-text="image.file.name"
+                    v-if="image.file.name"></span>
             </label>
             <span v-if="errors.has('file')" class="help is-danger"
-                    v-text="errors.first('file')"></span>
-            <figure class="image is-128x128">
+                v-text="errors.first('file')"></span>
+            <figure v-if="preview" class="image is-128x128">
                 <img :src="preview" id="preview">
             </figure>
         </div>
 
       <div class="field">
         <div class="control">
-          <input type="submit" value="Create" @click.prevent="submit">
+            <input class="button" type="submit" value="Create" @click.prevent="submit">
+            <router-link v-if="image.lastCreated" class="button is-success"
+                :to="image.lastCreated">Created image</router-link>
         </div>
       </div>
     </form>
@@ -53,6 +58,7 @@ export default {
                 title: "",
                 tags: null,
                 file: {},
+                lastCreated: null,
             },
             tags: [],
             preview: null,
@@ -62,11 +68,18 @@ export default {
         let vm = this;
         axios
             .get("/api/tags")
-            .then((response) => {
-                vm.tags = response.data.data
-            });
+            .then((response) => { vm.tags = response.data.data });
     },
     methods: {
+        resetForm() {
+            this.image = {
+                title: "",
+                tags: null,
+                file: {},
+                lastCreated: "",
+            };
+
+        },
         handleFile(event) {
             let vm = this;
             let file = event.target.files[0];
@@ -85,12 +98,23 @@ export default {
                 reader.readAsDataURL(file);
             }
         },
+        validateTags(value) {
+            let vm = this;
+            let tags = vm.image.tags = value;
+            console.log("tags", tags);
+            if (tags == null || tags.length == 0) {
+                vm.errors.add("tags", "Select at least 1 tag.");
+                return;
+            }
+
+            vm.errors.remove("tags");
+        },
         formData() {
             let vm = this;
             let formData = new FormData();
             formData.append("title", vm.image.title);
             vm.image.tags.forEach((tag) => {
-                formData.append("tags", tag.id);
+                formData.append("tags[]", tag.id);
             });
             formData.append("file", vm.image.file);
 
@@ -98,11 +122,30 @@ export default {
         },
         submit() {
             let vm = this;
-            let formData = vm.formData();
-            axios.post("/api/images", formData)
-                .then((e) => {
-                    debugger;
-                });
+
+            vm.$validator.validateAll().then((result) => {
+                if (!result) {
+                    vm.validateTags();
+                    return;
+                }
+
+                let formData = vm.formData();
+                axios.post("/api/images", formData)
+                    .then((response) => {
+                        vm.resetForm();
+                        window.flash("The image is created.", "success");
+                        vm.image.lastCreated = "/images/" + response.data.data.slug;
+                    })
+                    .catch((error) => {
+                        let data = error.response.data;
+                        window.flash(data.message, "error");
+                        let errors = data.errors;
+                        for (let field in errors) {
+                            vm.errors.add(field, errors[field][0]);
+                        }
+                    });
+            });
+
         }
     }
 }

@@ -5,6 +5,7 @@ window.VueRouter = require("vue-router");
 window.Vue.use(VueRouter);
 
 require('./components');
+require('./events');
 import routes from './routes';
 import VueRouter from "vue-router";
 
