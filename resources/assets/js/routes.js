@@ -8,6 +8,7 @@ import TagsShow from './components/mains/tags/Show'
 import TagsCreate from './components/mains/tags/Create'
 import TagsEdit from './components/mains/tags/Edit'
 import SearchTags from './components/mains/search/Tags'
+import SearchImages from './components/mains/search/Images'
 
 const routes = [
     { path: '/', component: Home },
@@ -23,6 +24,7 @@ const routes = [
     { path: '/tags/:slug/edit', component: TagsEdit },
 
     { path: '/search/tags', component: SearchTags },
+    { path: '/search/images', component: SearchImages },
 ];
 
 export default routes;

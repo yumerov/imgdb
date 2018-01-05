@@ -34,7 +34,7 @@
 ## v3
 
 - [ ] search
-    * [ ] tag by string
+    * [x] tag by string
     * [ ] image by title by string
     * [ ] image by positive tags
     * [ ] image by negative tags
