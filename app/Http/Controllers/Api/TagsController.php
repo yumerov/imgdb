@@ -58,7 +58,8 @@ class TagsController extends Controller
      */
     public function update(TagUpdateRequest $request, Tag $tag)
     {
-        return (new Update)->handle($request, $tag);
+        $tag->update($request->only("name"));
+        return new TagResource($tag);
     }
 
     /**

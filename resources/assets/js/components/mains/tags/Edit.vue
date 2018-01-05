@@ -34,31 +34,49 @@ export default {
             },
         }
     },
+    created() {
+        let vm = this;
+        let url = "/api/tags/" + vm.$route.params.slug;
+        axios.get(url)
+            .then((response) => { vm.tag.name = response.data.data.name; })
+            .catch((error) => {
+                if (error.response.status == 404) {
+                    window.flash("Not found", "error");
+                    setTimeout(function() {
+                        window.location.hash = "#/tags/";
+                        window.location.reload();
+                    }, 2000);
+                    return;
+                }
+
+                window.flash(error, "error");
+            });
+    },
     methods: {
-        resetForm() {
-            let vm = this;
-            vm.tag.name = "";
-            vm.erros.remove("name");
-        },
         submit() {
             let vm = this;
-            let data = new FormData();
-            data.append("name", vm.tag.name);
-
-            axios.post("/api/tags", data)
-                .then((response) => {
-                    vm.resetForm();
-                    window.flash("The tag is created.", "success");
-                    vm.tag.lastCreated = "/tags/" + response.data.data.slug;
-                })
-                .catch((error) => {
-                    let data = error.response.data;
-                    window.flash(data.message, "error");
-                    let errors = data.errors;
-                    for (let field in errors) {
-                        vm.errors.add(field, errors[field][0]);
-                    }
-                })
+            vm.$validator.validateAll().then((result) => {
+                let formData = new FormData();
+                formData.append("name", vm.tag.name);
+                formData.append("_method", "put");
+                let url = "/api/tags/" + vm.$route.params.slug;
+                axios.post(url, formData)
+                    .then((response) => {
+                        window.flash("The tag is updated.", "success");
+                        setTimeout(function() {
+                            window.location.hash = "#/tags/" + response.data.data.slug + "/edit";
+                            window.location.reload();
+                        }, 2000);
+                    })
+                    .catch((error) => {
+                        let data = error.response.data;
+                        window.flash(data.message, "error");
+                        let errors = data.errors;
+                        for (let field in errors) {
+                            vm.errors.add(field, errors[field][0]);
+                        }
+                    });
+            });
         }
     }
 }
