@@ -4,6 +4,9 @@ Vue.use(VeeValidate);
 Vue.component('v-select', vSelect)
 Vue.component('pagination', require('laravel-vue-bulma-pagination'));
 
+import VueLoading from 'vue2-loading';
+Vue.use(VueLoading, {});
+
 Vue.component('app', require('./components/App.vue'));
 Vue.component('app-header', require('./components/Header.vue'));
 Vue.component('app-footer', require('./components/Footer.vue'));

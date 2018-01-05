@@ -62,26 +62,33 @@ export default {
         }
     },
     created() {
+        window.loading();
         let vm = this;
         axios
             .get("/api/tags")
-            .then((response) => { vm.tags = response.data.data });
+            .then((response) => {
+                vm.tags = response.data.data
+                let url = "/api/images/" + vm.$route.params.slug;
+                axios.get(url)
+                    .then((response) => {
+                        vm.updateData(response.data.data);
+                        window.loaded();
+                    })
+                    .catch((error) => {
+                        window.loaded();
+                        if (error.response.status == 404) {
+                            window.flash("Not found", "error");
+                            setTimeout(function() {
+                                window.location.hash = "#/images/";
+                                window.location.reload();
+                            }, 2000);
+                            return;
+                        }
 
-        let url = "/api/images/" + vm.$route.params.slug;
-        axios.get(url)
-            .then((response) => { vm.updateData(response.data.data); })
-            .catch((error) => {
-                if (error.response.status == 404) {
-                    window.flash("Not found", "error");
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                    return;
-                }
-
-                window.flash(error, "error");
+                        window.flash(error, "error");
+                    });
             });
+
 
     },
     methods: {
@@ -146,11 +153,13 @@ export default {
                     return;
                 }
 
+                window.loading();
                 let formData = vm.formData();
                 let url = "/api/images/" + vm.$route.params.slug;
                 axios.post(url, formData)
                     .then((response) => {
                         window.flash("The image is updated.", "success");
+                        window.loaded();
                         setTimeout(function() {
                             window.location.hash = "#/images/" + response.data.data.slug + "/edit";
                             window.location.reload();
@@ -163,6 +172,7 @@ export default {
                         for (let field in errors) {
                             vm.errors.add(field, errors[field][0]);
                         }
+                        window.loaded();
                     });
             });
 

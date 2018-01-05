@@ -37,10 +37,15 @@ export default {
     created() {
         let vm = this;
         let url = "/api/tags/" + vm.$route.params.slug;
+        window.loading();
         axios.get(url)
-            .then((response) => { vm.tag.name = response.data.data.name; })
+            .then((response) => {
+                vm.tag.name = response.data.data.name;
+                window.loaded();
+            })
             .catch((error) => {
                 if (error.response.status == 404) {
+                    window.loaded();
                     window.flash("Not found", "error");
                     setTimeout(function() {
                         window.location.hash = "#/tags/";
@@ -49,11 +54,13 @@ export default {
                     return;
                 }
 
+                window.loaded();
                 window.flash(error, "error");
             });
     },
     methods: {
         submit() {
+            window.loading();
             let vm = this;
             vm.$validator.validateAll().then((result) => {
                 let formData = new FormData();
@@ -63,12 +70,14 @@ export default {
                 axios.post(url, formData)
                     .then((response) => {
                         window.flash("The tag is updated.", "success");
+                        window.loaded();
                         setTimeout(function() {
                             window.location.hash = "#/tags/" + response.data.data.slug + "/edit";
                             window.location.reload();
                         }, 2000);
                     })
                     .catch((error) => {
+                        window.loaded();
                         let data = error.response.data;
                         window.flash(data.message, "error");
                         let errors = data.errors;

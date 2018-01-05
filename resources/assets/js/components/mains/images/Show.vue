@@ -31,6 +31,7 @@ export default {
         };
     },
     created() {
+        window.loading();
         let vm = this;
         let url = "/api/images/" + vm.$route.params.slug;
         axios.get(url)
@@ -40,12 +41,14 @@ export default {
                     edit: "/images/" + vm.image.slug + "/edit",
                     destroy: "/api/images/" + vm.image.slug,
                 }
+                window.loaded();
             }).catch((error) => {
                 if (error.response.status == 404) {
                     window.flash("Not found", "error");
                 } else {
                     window.flash(error.response.data.message, "error");
                 }
+                window.loaded();
 
                 setTimeout(function() {
                     window.location.hash = "#/images/";
@@ -55,6 +58,7 @@ export default {
     },
     methods: {
         destroy() {
+            window.loading();
             let vm = this;
             let data = new FormData();
             data.append("_method", "delete");
@@ -62,6 +66,7 @@ export default {
             axios.post(vm.links.destroy, data)
                 .then((response) => {
                     window.flash("The imaeg is deleted.", "success");
+                    window.loaded();
 
                     setTimeout(function() {
                         window.location.hash = "#/images/";
@@ -74,6 +79,7 @@ export default {
                     } else {
                         window.flash(data.message, "error");
                     }
+                    window.loaded();
 
                     setTimeout(function() {
                         window.location.hash = "#/images/";

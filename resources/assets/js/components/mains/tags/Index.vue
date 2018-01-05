@@ -15,12 +15,16 @@ export default {
         }
     },
     created() {
+        window.loading();
         let vm = this;
         axios.get("/api/tags")
-            .then((response) => { vm.tags = response.data.data; })
+            .then((response) => {
+                vm.tags = response.data.data;
+                window.loaded();
+            })
             .catch((error) => {
                 window.flash(error.response.data.message, "error");
-
+                window.loaded();
             });
     }
 }

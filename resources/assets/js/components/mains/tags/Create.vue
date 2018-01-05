@@ -44,12 +44,13 @@ export default {
             let vm = this;
             let data = new FormData();
             data.append("name", vm.tag.name);
-
+            window.loading();
             axios.post("/api/tags", data)
                 .then((response) => {
                     vm.resetForm();
                     window.flash("The tag is created.", "success");
                     vm.tag.lastCreated = "/tags/" + response.data.data.slug;
+                    window.loaded();
                 })
                 .catch((error) => {
                     let data = error.response.data;
@@ -58,6 +59,7 @@ export default {
                     for (let field in errors) {
                         vm.errors.add(field, errors[field][0]);
                     }
+                    window.loaded();
                 })
         }
     }

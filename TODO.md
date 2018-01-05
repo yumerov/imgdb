@@ -19,12 +19,14 @@
     * [x] edit
     * [x] update
     * [x] delete
-- [ ] tag pages
-    * [ ] api
+- [x] tag pages
+    * [x] api
     * [x] index
     * [x] show
     * [x] create
     * [x] store
     * [x] edit
     * [x] update
-    * [ ] delete
+    * [x] delete
+- [x] loading animation
+    * centeralize loading and loaded events emitting using axios settings and vue hooks
