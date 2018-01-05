@@ -4,6 +4,7 @@ import ImagesShow from './components/mains/images/Show'
 import ImagesCreate from './components/mains/images/Create'
 import ImagesEdit from './components/mains/images/Edit'
 import TagsIndex from './components/mains/tags/Index'
+import TagsShow from './components/mains/tags/Show'
 
 const routes = [
     { path: '/', component: Home },
@@ -14,6 +15,7 @@ const routes = [
     { path: '/images/:slug/edit', component: ImagesEdit },
 
     { path: '/tags', component: TagsIndex },
+    { path: '/tags/:slug', component: TagsShow },
 ];
 
 export default routes;

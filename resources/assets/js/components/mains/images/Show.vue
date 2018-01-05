@@ -1,6 +1,5 @@
 <template>
     <div class="columns">
-        <my-flash></my-flash>
       <div class="column is-three-quarters">
         <figure>
           <img :src="image.file" class="image">

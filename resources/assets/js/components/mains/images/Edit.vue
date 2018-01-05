@@ -1,6 +1,5 @@
 <template>
     <form ref="form" @submit.prevent>
-        <my-flash></my-flash>
         <div class="field">
             <label class="label">Title</label>
             <div class="control">

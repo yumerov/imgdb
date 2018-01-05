@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Tag;
-use App\Actions\Tags\Show;
 use App\Actions\Tags\Update;
 use App\Actions\Tags\Store;
 use App\Actions\Tags\Destroy;
@@ -28,17 +27,6 @@ class TagsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(TagStoreRequest $request)
-    {
-        return (new Store)->handle($request);
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Tag  $tag
@@ -46,7 +34,19 @@ class TagsController extends Controller
      */
     public function show(Tag $tag)
     {
-        return (new Show)->handle($tag);
+        return new TagResource($tag);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(TagStoreRequest $request)
+    {
+        Tag::create($request->only("name"));
+        return (new Store)->handle($request);
     }
 
     /**
