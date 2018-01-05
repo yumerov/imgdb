@@ -16,6 +16,7 @@ class ImageUpdateRequest extends BaseRequest
     {
         return [
             'title' => 'required|unique:images,title,' . $this->image->id,
+            'tags' => 'required|array|min:1',
             'file' => 'nullable|image|max:5000',
         ];
     }

@@ -4,8 +4,7 @@ namespace App\Actions\Images;
 
 use App\Image;
 use App\Http\Requests\ImageStoreRequest;
-
-
+use App\Http\Resources\ImageResource;
 use Illuminate\Http\Request;
 
 class Store {
@@ -19,7 +18,6 @@ class Store {
         $image->save();
         $image->tags()->sync($request->input("tags"));
 
-        return redirect()->route("images.show", [$image->slug])
-            ->with("success", "The image is created.");
+        return new ImageResource($image);
     }
 }

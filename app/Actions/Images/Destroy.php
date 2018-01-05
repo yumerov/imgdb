@@ -10,7 +10,6 @@ class Destroy {
         \File::delete(public_path("/img/" . $image->file));
         $image->delete();
 
-        return redirect()->route("images.index")
-            ->with("success", "The image is deleted.");
+        return response()->json();
     }
 }
