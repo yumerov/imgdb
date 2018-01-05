@@ -1,9 +1,15 @@
 <template>
-    <a class="tag is-light" :href="tag.self" v-text="tag.name"></a>
+    <router-link class="tag is-light" :to="link" v-text="tag.name"></router-link>
 </template>
 
 <script>
 export default {
-    props: ['tag']
+    props: ['tag'],
+    data() {
+        let vm = this;
+        return {
+            link: "/tags/" + vm.tag.slug,
+        }
+    }
 }
 </script>

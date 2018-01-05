@@ -1,7 +1,6 @@
 <template>
     <section class="section">
         <div class="container">
-            <!-- @include("shared.success") -->
             <div class="columns">
                 <image-thumb v-for="image in images" :image="image"></image-thumb>
             </div>

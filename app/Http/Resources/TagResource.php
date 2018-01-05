@@ -17,6 +17,7 @@ class TagResource extends Resource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slug' => $this->slug,
         ];
     }
 }

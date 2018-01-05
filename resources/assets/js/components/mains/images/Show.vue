@@ -45,7 +45,7 @@ export default {
                 if (error.response.status == 404) {
                     window.flash("Not found", "error");
                 } else {
-                    window.flash(data.message, "error");
+                    window.flash(error.response.data.message, "error");
                 }
 
                 setTimeout(function() {

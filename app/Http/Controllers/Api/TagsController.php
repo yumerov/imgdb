@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Tag;
-use App\Actions\Tags\Index;
 use App\Actions\Tags\Show;
-use App\Actions\Tags\Edit;
 use App\Actions\Tags\Update;
-use App\Actions\Tags\Create;
 use App\Actions\Tags\Store;
 use App\Actions\Tags\Destroy;
 use App\Http\Requests\TagStoreRequest;
@@ -23,19 +20,11 @@ class TagsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return TagResource::collection(Tag::select(['id', 'name'])->get());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return (new Create)->handle();
+        $data = Tag::orderBy('created_at', 'desc')
+            ->paginate($request->input('per_page', 9999));
+        return TagResource::collection($data);
     }
 
     /**
@@ -58,17 +47,6 @@ class TagsController extends Controller
     public function show(Tag $tag)
     {
         return (new Show)->handle($tag);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tag $tag)
-    {
-        return (new Edit)->handle($tag);
     }
 
     /**
