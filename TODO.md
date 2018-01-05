@@ -22,9 +22,9 @@
 - [ ] tag pages
     * [ ] api
     * [x] index
-    * [ ] show
-    * [ ] create
-    * [ ] store
+    * [x] show
+    * [x] create
+    * [x] store
     * [ ] edit
     * [ ] update
     * [ ] delete

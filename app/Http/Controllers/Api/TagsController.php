@@ -45,8 +45,8 @@ class TagsController extends Controller
      */
     public function store(TagStoreRequest $request)
     {
-        Tag::create($request->only("name"));
-        return (new Store)->handle($request);
+        $tag = Tag::create($request->only("name"));
+        return new TagResource($tag);
     }
 
     /**
