@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Tag;
 use App\Actions\Tags\Update;
 use App\Actions\Tags\Store;
-use App\Actions\Tags\Destroy;
 use App\Http\Requests\TagStoreRequest;
 use App\Http\Requests\TagUpdateRequest;
 use App\Http\Controllers\Controller;
@@ -70,6 +69,7 @@ class TagsController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        return (new Destroy)->handle($tag);
+        $tag->delete();
+        return response()->json();
     }
 }

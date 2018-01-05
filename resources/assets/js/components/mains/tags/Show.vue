@@ -4,7 +4,7 @@
             <div class="columns">
                 <div class="column is-one-quarter">
                 <h1>{{ tag.name }} [<router-link :to="links.edit">edit</router-link>]</h1>
-                <input type="submit" value="Delete">
+                <button class="button" @click="destroy">Delete</button>
 
                 </div>
                 <div class="column is-three-quarters">
@@ -48,5 +48,35 @@
                     }, 2000);
                 });
         },
+        methods: {
+            destroy() {
+                let vm = this;
+                let data = new FormData();
+                data.append("_method", "delete");
+
+                axios.post(vm.links.destroy, data)
+                    .then((response) => {
+                        window.flash("The tag is deleted.", "success");
+
+                        setTimeout(function() {
+                            window.location.hash = "#/tags/";
+                            window.location.reload();
+                        }, 2000);
+                    })
+                    .catch((error) => {
+                        if (error.response.status == 404) {
+                            window.flash("Not found", "error");
+                        } else {
+                            window.flash(data.message, "error");
+                        }
+
+                        setTimeout(function() {
+                            window.location.hash = "#/tags/";
+                            window.location.reload();
+                        }, 2000);
+                    });
+            }
+
+        }
     }
 </script>
