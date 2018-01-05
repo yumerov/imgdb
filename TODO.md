@@ -6,6 +6,7 @@
 - [ ] at homepage, images are aout of grid when there is more than 4 items
 - [ ] at imaghe page, add spacing between tags
 - [ ] at ttags.index shoulb be space between tags
+- [ ] centeralize loading and loaded events emitting using axios settings and vue hooks
 
 ## v2
 
@@ -29,4 +30,13 @@
     * [x] update
     * [x] delete
 - [x] loading animation
-    * centeralize loading and loaded events emitting using axios settings and vue hooks
+
+## v3
+
+- [ ] search
+    * [ ] tag by string
+    * [ ] image by title by string
+    * [ ] image by positive tags
+    * [ ] image by negative tags
+- [ ] related images based on common tags
+- [ ] export command

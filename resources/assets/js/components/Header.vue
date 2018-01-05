@@ -18,6 +18,7 @@
                     <nav-item link="/images/create" label="Create an image"></nav-item>
                     <nav-item link="/tags" label="Tags"></nav-item>
                     <nav-item link="/tags/create" label="Create a tag"></nav-item>
+                    <nav-item link="/search/tags" label="Search tags"></nav-item>
                 </div>
             </div>
             </div>
