@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Export::class,
+        \App\Console\Commands\Restore::class,
     ];
 
     /**

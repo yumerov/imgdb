@@ -5,16 +5,16 @@ namespace App\Console\Commands;
 use \Zip;
 use \Carbon\Carbon;
 use \Exception;
-use Illuminate\Console\Command;
+// use Illuminate\Console\Command;
 
-class Export extends Command
+class Export extends DataCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:export';
+    protected $signature = 'app:data:export {name?}';
 
     /**
      * The console command description.
@@ -33,9 +33,13 @@ class Export extends Command
         parent::__construct();
     }
 
-    public function getDatabasePath() {
-        $connections = config("database.connections");
-        return $connections[config('database.default')]["database"];
+    private function _handle() {
+        $name = $this->argument('name', '');
+        $name = $name ? "-" . $name : "";
+        $name = Carbon::now()->format("Y-m-d--H-i-s") . $name. ".zip";
+        $file = Zip::create(storage_path() . '/backups/' . $name);
+        $file->add($this->getDatabasePath());
+        $file->add(public_path('img'));
     }
 
     /**
@@ -46,10 +50,7 @@ class Export extends Command
     public function handle()
     {
         try {
-            $name = Carbon::now()->format("Y-m-d--H-i-s") . ".zip";
-            $file = Zip::create(storage_path() . '/backups/' . $name);
-            $file->add($this->getDatabasePath());
-            $file->add(public_path('img'));
+            $this->_handle();
             $this->info("Exported successfully.");
         } catch (Exception $e) {
             $this->error($e->getMessage());

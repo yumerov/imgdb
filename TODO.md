@@ -43,5 +43,5 @@
     * [x] image by title by string
     * [x] image by positive tags
     * [x] image by negative tags
-- [ ] export command
+- [x] export command
 - [ ] related images based on common tags
