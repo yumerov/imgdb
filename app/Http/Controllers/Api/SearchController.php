@@ -18,8 +18,17 @@ class SearchController extends Controller
     }
 
     public function images(Request $request) {
-        $data = Image::where('title', 'like', '%' . $request->input('term') . '%')
-            ->paginate(2);
+        $term = $request->input('term');
+        $includedTags = $request->input('positive_tags');
+        $excludedTags = $request->input('negative_tags');
+
+        $query = Image::title($term);
+
+        if ($includedTags) {
+            $query = $query->hasTags($includedTags);
+        }
+
+        $data = $query->paginate(2);
         return ImageResource::collection($data);
     }
 }

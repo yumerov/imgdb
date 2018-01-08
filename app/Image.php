@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use \Illuminate\Database\Eloquent\Builder;
 
 class Image extends Model
 {
@@ -24,5 +25,15 @@ class Image extends Model
 
     public function getUrlAttribute() {
         return asset("/img/" . $this->file);
+    }
+
+    public function scopeTitle(Builder $query, $title) {
+        return $query->where('title', 'like', '%' . $title . '%');
+    }
+
+    public function scopeHasTags(Builder $query, array $tags) {
+        return $query->whereHas('tags', function($query) use ($tags) {
+            $query->whereIn('tags.id', $tags);
+        });
     }
 }
