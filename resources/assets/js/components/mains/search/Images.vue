@@ -2,29 +2,37 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="field has-addons column one-third">
+                <div class="field column">
+                    <div class="label">Search term:</div>
                     <div class="control">
                         <input class="input" type="text"
                             @keyup.enter="submit"
                             v-model="search.term"
                             placeholder="Find images">
                     </div>
-                    <div class="control">
-                        <button class="button is-info" @click="submit">Search</button>
-                    </div>
                 </div>
-                <div class="column one-third field">
+                <div class="column field">
+                    <div class="label">Including tags:</div>
                     <div class="control">
                         <v-select multiple label="name" value="id"
                             v-model="search.positive_tags"
                             :options="tags"></v-select>
                     </div>
                 </div>
-                <div class="column one-third field">
+                <div class="column field">
+                    <div class="label">Excluding tags:</div>
                     <div class="control">
                         <v-select multiple label="name" value="id"
                             v-model="search.negative_tags"
                             :options="tags"></v-select>
+                    </div>
+                </div>
+                <div class="column field">
+                    <div class="label"></div>
+                    <div class="control">
+                        <button class="button is-large" @click="submit">
+                            Search
+                        </button>
                     </div>
                 </div>
             </div>

@@ -28,6 +28,10 @@ class SearchController extends Controller
             $query = $query->hasTags($includedTags);
         }
 
+        if ($excludedTags) {
+            $query = $query->notHasTags($excludedTags);
+        }
+
         $data = $query->paginate(2);
         return ImageResource::collection($data);
     }

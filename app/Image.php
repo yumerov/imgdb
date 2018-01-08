@@ -36,4 +36,10 @@ class Image extends Model
             $query->whereIn('tags.id', $tags);
         });
     }
+
+    public function scopeNotHasTags(Builder $query, array $tags) {
+        return $query->whereDoesntHave('tags', function($query) use ($tags) {
+            $query->whereIn('tags.id', $tags);
+        });
+    }
 }

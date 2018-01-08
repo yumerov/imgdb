@@ -6,6 +6,7 @@
     * [ ] at imaghe page, add spacing between tags
     * [ ] at homepage, images are aout of grid when there is more than 4 items
     * [ ] at image search, when choice a tga in positive column, disable the same value in negative column
+    * [ ] at image serach page center search button
 
 - [ ] Common
     * [ ] at image page, show related images based on common tags
@@ -37,10 +38,10 @@
 
 ## v3
 
-- [ ] search
+- [x] search
     * [x] tag by string
     * [x] image by title by string
-    * [ ] image by positive tags
-    * [ ] image by negative tags
-- [ ] related images based on common tags
+    * [x] image by positive tags
+    * [x] image by negative tags
 - [ ] export command
+- [ ] related images based on common tags
