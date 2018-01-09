@@ -13,7 +13,7 @@
                 @click="destroy">
                 <i class="fa fa-remove"></i></button>
         </h1>
-        <tag v-for="tag in image.tags" :tag="tag"></tag>
+        <tags :tags="image.tags"></tags>
         <div class="columns">
             <image-thumb v-for="image in image.related_images" :image="image"></image-thumb>
         </div>

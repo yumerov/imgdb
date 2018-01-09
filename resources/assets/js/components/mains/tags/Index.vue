@@ -2,7 +2,7 @@
       <section class="section">
         <div class="container">
             <h1>@TODO: top used tags, least used tags, recently created tags,</h1>
-            <tag v-for="tag in tags" :tag="tag"></tag>
+            <tags :tags="tags"></tags>
         </div>
     </section>
 </template>

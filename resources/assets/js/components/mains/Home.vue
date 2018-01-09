@@ -13,10 +13,10 @@
             </section>
 
             <section class="section">
-              <div class="container">
-                <h1 class="title">Recent tags</h1>
-                <tag v-for="tag in tags" :tag="tag"></tag>
-              </div>
+                <div class="container">
+                    <h1 class="title">Recent tags</h1>
+                    <tags :tags="tags"></tags>
+                </div>
             </section>
         </div>
   </div>

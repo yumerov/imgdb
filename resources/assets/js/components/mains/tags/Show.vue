@@ -8,9 +8,9 @@
 
                 </div>
                 <div class="column is-three-quarters">
-                <div class="columns is-multiline">
-                    <image-thumb v-if="tag.images" v-for="image in tag.images" :image="image"></image-thumb>
-                </div>
+                    <div class="columns is-multiline">
+                        <image-thumb v-if="tag.images" v-for="image in tag.images" :image="image"></image-thumb>
+                    </div>
                 </div>
             </div>
         </div>

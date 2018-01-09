@@ -1,8 +1,8 @@
 # imgDB
 
 -  [ ] Fixes
-    * [ ] at tags.index shoulb be space between tags
-    * [ ] at homepage, add spacing between tags
+    * [x] at tags.index shoulb be space between tags
+    * [x] at homepage, add spacing between tags
     * [ ] at imaghe page, add spacing between tags
     * [ ] at homepage, images are aout of grid when there is more than 4 items
     * [ ] at image search, when choice a tga in positive column, disable the same value in negative column
@@ -46,4 +46,4 @@
     * [x] image by positive tags
     * [x] image by negative tags
 - [x] export command
-- [ ] related images based on common tags
+- [x] related images based on common tags
