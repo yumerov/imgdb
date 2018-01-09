@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class ImageResource extends Resource
+class ImageSimpleResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -20,9 +20,6 @@ class ImageResource extends Resource
             'slug' => $this->slug,
             'file' => $this->url,
             "self" => route("images.show", $this->slug),
-            "tags" => $this->tags->map(function ($tag) {
-                return ['id' => $tag->id, 'name' => $tag->name];
-            })->toArray(),
         ];
     }
 }

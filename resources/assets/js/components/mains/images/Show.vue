@@ -14,7 +14,9 @@
                 <i class="fa fa-remove"></i></button>
         </h1>
         <tag v-for="tag in image.tags" :tag="tag"></tag>
-        <p>at TODO: related images based on common tags</p>
+        <div class="columns">
+            <image-thumb v-for="image in image.related_images" :image="image"></image-thumb>
+        </div>
       </div>
     </div>
 </template>
@@ -30,33 +32,44 @@ export default {
             }
         };
     },
-    created() {
-        window.loading();
+    watch: {
+      '$route' (to, from) {
         let vm = this;
-        let url = "/api/images/" + vm.$route.params.slug;
-        axios.get(url)
-            .then((response) => {
-                vm.image = response.data.data;
-                vm.links = {
-                    edit: "/images/" + vm.image.slug + "/edit",
-                    destroy: "/api/images/" + vm.image.slug,
-                }
-                window.loaded();
-            }).catch((error) => {
-                if (error.response.status == 404) {
-                    window.flash("Not found", "error");
-                } else {
-                    window.flash(error.response.data.message, "error");
-                }
-                window.loaded();
-
-                setTimeout(function() {
-                    window.location.hash = "#/images/";
-                    window.location.reload();
-                }, 2000);
-            });
+        vm.loadImage();
+      }
+    },
+    created() {
+        let vm = this;
+        vm.loadImage();
     },
     methods: {
+        loadImage() {
+            window.loading();
+            let vm = this;
+            let url = "/api/images/" + vm.$route.params.slug;
+            axios.get(url)
+                .then((response) => {
+                    vm.image = response.data.data;
+                    vm.links = {
+                        edit: "/images/" + vm.image.slug + "/edit",
+                        destroy: "/api/images/" + vm.image.slug,
+                    }
+                    window.loaded();
+                }).catch((error) => {
+                    if (error.response.status == 404) {
+                        window.flash("Not found", "error");
+                    } else {
+                        window.flash(error.response.data.message, "error");
+                    }
+                    window.loaded();
+
+                    setTimeout(function() {
+                        window.location.hash = "#/images/";
+                        window.location.reload();
+                    }, 2000);
+                });
+
+        },
         destroy() {
             window.loading();
             let vm = this;
