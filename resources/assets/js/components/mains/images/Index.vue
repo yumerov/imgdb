@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <div class="container">
-            <div class="columns">
+            <div class="columns is-multiline">
                 <image-thumb v-for="image in images" :image="image"></image-thumb>
             </div>
             <pagination :pagedata="meta" @page-clicked="openPage"></pagination>
