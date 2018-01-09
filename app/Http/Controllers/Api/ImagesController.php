@@ -10,7 +10,8 @@ use App\Actions\Images\Update;
 use App\Actions\Images\Destroy;
 use App\Http\Requests\ImageStoreRequest;
 use App\Http\Requests\ImageUpdateRequest;
-use App\Http\Resources\ImageResource;
+use App\Http\Resources\ImageSimpleResource;
+use App\Http\Resources\ImageFullResource;
 use Illuminate\Http\Request;
 
 class ImagesController extends Controller
@@ -23,7 +24,7 @@ class ImagesController extends Controller
     public function index()
     {
         $data = Image::orderBy("created_at", "desc")->paginate(12);
-        return ImageResource::collection($data);
+        return ImageSimpleResource::collection($data);
     }
 
     /**
@@ -45,7 +46,7 @@ class ImagesController extends Controller
      */
     public function show(Image $image)
     {
-        return new ImageResource($image);
+        return new ImageFullResource($image);
     }
 
     /**

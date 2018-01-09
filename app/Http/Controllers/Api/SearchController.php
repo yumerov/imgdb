@@ -6,7 +6,7 @@ use App\Tag;
 use App\Image;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TagResource;
-use App\Http\Resources\ImageResource;
+use App\Http\Resources\ImageSimpleResource;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -33,6 +33,6 @@ class SearchController extends Controller
         }
 
         $data = $query->paginate(2);
-        return ImageResource::collection($data);
+        return ImageSimpleResource::collection($data);
     }
 }

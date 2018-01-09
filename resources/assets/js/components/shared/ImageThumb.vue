@@ -1,6 +1,6 @@
 <template>
     <router-link :to="/images/ + image.slug" class="column is-one-quarter">
-        <figure class="">
+        <figure>
             <img :src="image.file" class="image">
             <figcaption v-text="image.title"></figcaption>
         </figure>

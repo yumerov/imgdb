@@ -42,4 +42,13 @@ class Image extends Model
             $query->whereIn('tags.id', $tags);
         });
     }
+
+    public function relatedImages($limit = 99)
+    {
+        $tags = $this->tags()->select(['tags.id'])->get()->pluck('id')->toArray();
+
+        return static::whereHas('tags', function($query) use ($tags) {
+            $query->whereIn('tags.id', $tags);
+        })->where('id', '!=', $this->id)->get()->shuffle()->take($limit);
+    }
 }
