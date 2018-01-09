@@ -32,17 +32,13 @@ export default {
     },
     created() {
         let self = this;
-        window.loading();
-        axios.get("/api/images")
-        .then((response) => {
+        axios.get("/api/images").then((response) => {
             self.images = response.data.data;
         })
         .then(() => {
-            axios.get("/api/tags")
-            .then((response) => {
+            axios.get("/api/tags").then((response) => {
                 self.tags = response.data.data;
             });
-            window.loaded();
         });
     }
 }

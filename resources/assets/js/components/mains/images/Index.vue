@@ -20,7 +20,6 @@ export default {
     },
     methods: {
         openPage(page = 1) {
-            window.loading();
             let url = "/api/images?page=" + page;
             axios.get(url).then(this.handleResponse);
         },
@@ -30,7 +29,6 @@ export default {
             this.links = d.links;
             this.meta = d.meta;
             this.$router.push({ params: { page: d.meta.current_page } });
-            window.loaded();
         },
 
 

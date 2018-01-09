@@ -45,57 +45,26 @@ export default {
         }
     },
     created() {
-        window.loading();
         let vm = this;
-        axios.get("/api/tags")
-            .then((response) => {
-                vm.tags.all = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                window.flash(error.response.data.message, "error");
-                window.loaded();
-            });
+        axios.get("/api/tags").then((res) => {
+            vm.tags.all = res.data.data;
+        });
 
-        axios.get("/api/tags", { params: { tab: "first"} })
-            .then((response) => {
-                vm.tags.oldest = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                window.flash(error.response.data.message, "error");
-                window.loaded();
-            });
+        axios.get("/api/tags", { params: { tab: "first"} }).then((res) => {
+            vm.tags.oldest = res.data.data;
+        });
 
-        axios.get("/api/tags", { params: { tab: "last"} })
-            .then((response) => {
-                vm.tags.newest = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                window.flash(error.response.data.message, "error");
-                window.loaded();
-            });
+        axios.get("/api/tags", { params: { tab: "last"} }).then((res) => {
+            vm.tags.newest = res.data.data;
+        });
 
-        axios.get("/api/tags", { params: { tab: "most_used"} })
-            .then((response) => {
-                vm.tags.most_used = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                window.flash(error.response.data.message, "error");
-                window.loaded();
-            });
+        axios.get("/api/tags", { params: { tab: "most_used"} }).then((res) => {
+            vm.tags.most_used = res.data.data;
+        });
 
-        axios.get("/api/tags", { params: { tab: "least_used"} })
-            .then((response) => {
-                vm.tags.least_used = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                window.flash(error.response.data.message, "error");
-                window.loaded();
-            });
+        axios.get("/api/tags", { params: { tab: "least_used"} }).then((res) => {
+            vm.tags.least_used = res.data.data;
+        });
     }
 }
 </script>

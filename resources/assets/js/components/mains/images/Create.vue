@@ -64,14 +64,10 @@ export default {
         }
     },
     created() {
-        window.loading();
         let vm = this;
-        axios
-            .get("/api/tags")
-            .then((response) => {
-                vm.tags = response.data.data;
-                window.loaded();
-            });
+        axios.get("/api/tags").then((response) => {
+            vm.tags = response.data.data;
+        });
     },
     methods: {
         resetForm() {
@@ -132,14 +128,12 @@ export default {
                     return;
                 }
 
-                window.loading();
                 let formData = vm.formData();
                 axios.post("/api/images", formData)
                     .then((response) => {
                         vm.resetForm();
                         window.flash("The image is created.", "success");
                         vm.image.lastCreated = "/images/" + response.data.data.slug;
-                        window.loaded();
                     })
                     .catch((error) => {
                         let data = error.response.data;
@@ -148,7 +142,6 @@ export default {
                         for (let field in errors) {
                             vm.errors.add(field, errors[field][0]);
                         }
-                        window.loaded();
                     });
             });
 

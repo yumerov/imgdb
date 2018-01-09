@@ -67,7 +67,6 @@ export default {
         }
     },
     created() {
-        window.loading();
         let vm = this;
         axios.get("/api/tags")
             .then((response) => {
@@ -77,12 +76,10 @@ export default {
                     positive: d,
                     negative: d,
                 };
-                window.loaded();
             })
             .catch((error) => {
                 let data = error.response.data;
                 window.flash(data.message, "error");
-                window.loaded();
             });
     },
     methods: {
@@ -119,7 +116,6 @@ export default {
             vm.search.negative_tags = vm.search.negative_tags.filter(not_excluded);
         },
         openPage(page = 1) {
-            window.loading();
             let vm = this;
             let url = "/api/search/images";
             let data = {};
@@ -131,7 +127,6 @@ export default {
             let d = response.data;
             this.results = d.data;
             this.meta = d.meta;
-            window.loaded();
         },
         transformSearchData() {
             let vm = this;
@@ -141,7 +136,6 @@ export default {
             return data;
         },
         submit() {
-            window.loading();
             let vm = this;
             vm.results = [];
             axios.get("/api/search/images", { params: vm.transformSearchData() })
@@ -149,12 +143,6 @@ export default {
                     let d = response.data
                     vm.results = d.data;
                     vm.meta = d.meta
-                    window.loaded();
-                })
-                .catch((error) => {
-                    let data = error.response.data;
-                    window.flash(data.message, "error");
-                    window.loaded();
                 });
         }
     }

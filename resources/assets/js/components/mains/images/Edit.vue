@@ -62,7 +62,6 @@ export default {
         }
     },
     created() {
-        window.loading();
         let vm = this;
         axios
             .get("/api/tags")
@@ -72,10 +71,8 @@ export default {
                 axios.get(url)
                     .then((response) => {
                         vm.updateData(response.data.data);
-                        window.loaded();
                     })
                     .catch((error) => {
-                        window.loaded();
                         if (error.response.status == 404) {
                             window.flash("Not found", "error");
                             setTimeout(function() {
@@ -153,13 +150,11 @@ export default {
                     return;
                 }
 
-                window.loading();
                 let formData = vm.formData();
                 let url = "/api/images/" + vm.$route.params.slug;
                 axios.post(url, formData)
                     .then((response) => {
                         window.flash("The image is updated.", "success");
-                        window.loaded();
                         setTimeout(function() {
                             window.location.hash = "#/images/" + response.data.data.slug + "/edit";
                             window.location.reload();
@@ -167,12 +162,10 @@ export default {
                     })
                     .catch((error) => {
                         let data = error.response.data;
-                        window.flash(data.message, "error");
                         let errors = data.errors;
                         for (let field in errors) {
                             vm.errors.add(field, errors[field][0]);
                         }
-                        window.loaded();
                     });
             });
 
