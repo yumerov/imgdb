@@ -45,7 +45,7 @@
 
 - [ ] Common
     * [x] at image page, show related images based on common tags
-    * [ ] at tags page, show top used tags sections, recently created tags section
+    * [x] at tags page, show top used tags sections, recently created tags section
     * [ ] centeralize loading and loaded events emitting using axios settings and vue hooks
     * [ ] use Vuex
 

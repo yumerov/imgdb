@@ -20,8 +20,18 @@ class TagsController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Tag::orderBy('created_at', 'desc')
-            ->paginate($request->input('per_page', 9999));
+        $tab = $request->input('tab', 'all');
+        $tabMap = [
+            "most_used" => Tag::withCount("images")
+                    ->orderBy("images_count", "desc")->take(20),
+            "least_used" => Tag::withCount("images")
+                    ->orderBy("images_count", "asc")->take(20),
+            'first' => Tag::orderBy('created_at')->take(20),
+            'last' => Tag::orderBy('created_at', 'desc')->take(20),
+            'all' => Tag::orderBy('created_at', 'desc'),
+        ];
+        $data = $tabMap[$tab]->get();
+
         return TagResource::collection($data);
     }
 
