@@ -4,7 +4,7 @@ namespace App\Actions\Images;
 
 use App\Image;
 use App\Http\Requests\ImageUpdateRequest;
-use App\Http\Resources\ImageResource;
+use App\Http\Resources\ImageFullResource;
 
 class Update {
 
@@ -23,6 +23,6 @@ class Update {
         }
         $image->tags()->sync($request->input("tags"));
 
-        return new ImageResource($image);
+        return new ImageFullResource($image);
     }
 }

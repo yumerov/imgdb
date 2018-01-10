@@ -137,7 +137,6 @@ export default {
                     })
                     .catch((error) => {
                         let data = error.response.data;
-                        window.flash(data.message, "error");
                         let errors = data.errors;
                         for (let field in errors) {
                             vm.errors.add(field, errors[field][0]);

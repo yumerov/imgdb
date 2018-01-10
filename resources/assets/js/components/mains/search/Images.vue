@@ -76,10 +76,6 @@ export default {
                     positive: d,
                     negative: d,
                 };
-            })
-            .catch((error) => {
-                let data = error.response.data;
-                window.flash(data.message, "error");
             });
     },
     methods: {

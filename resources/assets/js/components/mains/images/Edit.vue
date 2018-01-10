@@ -82,7 +82,6 @@ export default {
                             return;
                         }
 
-                        window.flash(error, "error");
                     });
             });
 
@@ -119,7 +118,6 @@ export default {
         validateTags(value) {
             let vm = this;
             let tags = vm.image.tags = value;
-            console.log("tags", tags);
             if (tags == null || tags.length == 0) {
                 vm.errors.add("tags", "Select at least 1 tag.");
                 return;
