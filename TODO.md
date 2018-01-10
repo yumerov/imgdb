@@ -46,7 +46,11 @@
 - [ ] Common
     * [x] at image page, show related images based on common tags
     * [x] at tags page, show top used tags sections, recently created tags section
-    * [ ] centeralize loading and loaded events emitting using axios settings and vue hooks
+    * [x] centeralize loading and loaded events emitting using axios settings and vue hooks
     * [ ] use Vuex
 
 ## Tests
+
+## Performance(caching)
+
+## Split in user mode and admin mode

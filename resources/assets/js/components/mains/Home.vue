@@ -23,23 +23,18 @@
 </template>
 
 <script>
+import { Home as store} from "../../stores/Home.js";
 export default {
-    data() {
-        return {
-            images: [],
-            tags: [],
-        }
+    computed: {
+        images() { return this.$store.state.images; },
+        tags() { return this.$store.state.tags; },
     },
+    store,
     created() {
-        let self = this;
-        axios.get("/api/images").then((response) => {
-            self.images = response.data.data;
-        })
-        .then(() => {
-            axios.get("/api/tags").then((response) => {
-                self.tags = response.data.data;
-            });
-        });
+        let vm = this;
+        const d = vm.$store.dispatch;
+        d("GET_IMAGES");
+        d("GET_TAGS");
     }
 }
 </script>
