@@ -18,10 +18,10 @@ const Home = new Vuex.Store({
     },
     actions: {
         GET_IMAGES ({ commit }) {
-            images.getNewest().then((data) => commit("SET_IMAGES", data));
+            images.get().then((data) => commit("SET_IMAGES", data.data));
         },
         GET_TAGS ({ commit }) {
-            tags.getAll().then((data) => commit("SET_TAGS", data));
+            tags.get().then((data) => commit("SET_TAGS", data.data));
         },
 
     }

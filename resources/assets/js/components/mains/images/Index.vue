@@ -10,31 +10,24 @@
 </template>
 
 <script>
+import { Index as store} from "../../../stores/Images.js";
 export default {
-    data() {
-        return {
-            images: [],
-            links: {},
-            meta: {},
-        }
+    computed: {
+        images() { return this.$store.state.images },
+        meta() { return this.$store.state.meta }
     },
+    store,
     methods: {
         openPage(page = 1) {
-            let url = "/api/images?page=" + page;
-            axios.get(url).then(this.handleResponse);
+            let vm = this;
+            vm.$store.dispatch("GET", page).then((data) => {
+                vm.$router.push({ params: { page: data.meta.current_page } });
+            });
         },
-        handleResponse(response) {
-            let d = response.data;
-            this.images = d.data;
-            this.links = d.links;
-            this.meta = d.meta;
-            this.$router.push({ params: { page: d.meta.current_page } });
-        },
-
-
     },
-    mounted() {
-        this.openPage(this.$route.query.page);
+    created() {
+        let vm = this;
+        vm.$store.dispatch("GET", vm.$route.query.page);
     }
 }
 </script>

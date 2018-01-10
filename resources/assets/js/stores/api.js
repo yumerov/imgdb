@@ -1,14 +1,14 @@
 const actions = {
     get(url, request) {
         return axios.get(url, request)
-            .then((response) => Promise.resolve(response.data.data))
+            .then((response) => Promise.resolve(response.data))
             .catch((error) => Promise.reject(error));
     },
-    // post(url, request) {
-    //     return Vue.http.post(url, request)
-    //         .then((response) => Promise.resolve(response))
-    //         .catch((error) => Promise.reject(error));
-    // },
+    post(url, request) {
+        return axios.post(url, request)
+            .then((response) => Promise.resolve(response))
+            .catch((error) => Promise.reject(error));
+    },
     // patch(url, request) {
     //     return Vue.http.patch(url, request)
     //         .then((response) => Promise.resolve(response))
@@ -22,15 +22,12 @@ const actions = {
 }
 
 const images = {
-    getNewest() {
-        return actions.get("/api/images");
-    }
+    get: (page = 1) => actions.get("/api/images", { params: { page } }),
+    create: (data) => actions.post("/api/images", data),
 }
 
 const tags = {
-    getAll() {
-        return actions.get("/api/tags");
-    }
+    get: () => actions.get("/api/tags"),
 }
 
 export { images, tags, actions };

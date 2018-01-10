@@ -6,7 +6,7 @@
                 <div class="columns">
                   <h1 class="title column">Recent images</h1>
                 </div>
-                <div class="columns">
+                <div class="columns is-multiline">
                     <image-thumb v-for="image in images" :image="image"></image-thumb>
                 </div>
               </div>
@@ -34,7 +34,7 @@ export default {
         let vm = this;
         const d = vm.$store.dispatch;
         d("GET_IMAGES");
-        d("GET_TAGS");
+        d("get_tags");
     }
 }
 </script>
