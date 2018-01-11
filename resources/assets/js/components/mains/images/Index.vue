@@ -20,14 +20,14 @@ export default {
     methods: {
         openPage(page = 1) {
             let vm = this;
-            vm.$store.dispatch("GET", page).then((data) => {
+            vm.$store.dispatch("get", page).then((data) => {
                 vm.$router.push({ params: { page: data.meta.current_page } });
             });
         },
     },
     created() {
         let vm = this;
-        vm.$store.dispatch("GET", vm.$route.query.page);
+        vm.$store.dispatch("get", vm.$route.query.page);
     }
 }
 </script>

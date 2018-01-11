@@ -22,74 +22,21 @@
 </template>
 
 <script>
+import { Show as store} from "../../../stores/Images.js";
 export default {
-    data() {
-        return {
-            image: {},
-            links: {
-                edit: "",
-                destroy: "",
-            }
-        };
+    store,
+    computed: {
+        image() { return this.$store.state.image },
+        links() { return this.$store.state.links },
     },
     watch: {
-      '$route' (to, from) {
-        let vm = this;
-        vm.loadImage();
-      }
+      '$route' (to, from) { this.$store.dispatch("show"); }
     },
     created() {
-        let vm = this;
-        vm.loadImage();
+        this.$store.dispatch("show", this.$route.params.slug);
     },
     methods: {
-        loadImage() {
-            let vm = this;
-            let url = "/api/images/" + vm.$route.params.slug;
-            axios.get(url)
-                .then((response) => {
-                    vm.image = response.data.data;
-                    vm.links = {
-                        edit: "/images/" + vm.image.slug + "/edit",
-                        destroy: "/api/images/" + vm.image.slug,
-                    }
-                }).catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    }
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                });
-
-        },
-        destroy() {
-            let vm = this;
-            let data = new FormData();
-            data.append("_method", "delete");
-
-            axios.post(vm.links.destroy, data)
-                .then((response) => {
-                    window.flash("The imaeg is deleted.", "success");
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                })
-                .catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    }
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                });
-        }
+        destroy() { this.$store.dispatch("destroy", this.$route.params.slug); }
     }
 }
 </script>

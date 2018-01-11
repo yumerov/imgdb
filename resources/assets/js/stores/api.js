@@ -9,21 +9,21 @@ const actions = {
             .then((response) => Promise.resolve(response))
             .catch((error) => Promise.reject(error));
     },
-    // patch(url, request) {
-    //     return Vue.http.patch(url, request)
-    //         .then((response) => Promise.resolve(response))
-    //         .catch((error) => Promise.reject(error));
-    // },
-    // delete(url, request) {
-    //     return Vue.http.delete(url, request)
-    //         .then((response) => Promise.resolve(response))
-    //         .catch((error) => Promise.reject(error));
-    // }
 }
 
 const images = {
     get: (page = 1) => actions.get("/api/images", { params: { page } }),
     create: (data) => actions.post("/api/images", data),
+    show: (slug) => actions.get("/api/images/" + slug),
+    update: (slug, data) => {
+        data.append("_method", "put");
+        return actions.post("/api/images/" + slug, data);
+    },
+    destroy: (slug,) => {
+        let data = new FormData();
+        data.append("_method", "delete");
+        return actions.post("/api/images/" + slug, data);
+    },
 }
 
 const tags = {

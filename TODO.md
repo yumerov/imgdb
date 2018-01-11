@@ -54,3 +54,5 @@
 ## Performance(caching)
 
 ## Split in user mode and admin mode
+
+## Refactor to minimize code duplications
