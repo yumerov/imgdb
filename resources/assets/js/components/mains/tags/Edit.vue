@@ -43,7 +43,6 @@ export default {
             })
             .catch((error) => {
                 if (error.response.status == 404) {
-                    window.flash("Not found", "error");
                     setTimeout(function() {
                         window.location.hash = "#/tags/";
                         window.location.reload();

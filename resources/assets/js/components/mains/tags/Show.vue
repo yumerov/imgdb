@@ -36,12 +36,6 @@
                         destroy: "/api/tags/" + vm.tag.slug,
                     }
                 }).catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    } else {
-                        window.flash(error.response.data.message, "error");
-                    }
-
                     setTimeout(function() {
                         window.location.hash = "#/tags/";
                         window.location.reload();

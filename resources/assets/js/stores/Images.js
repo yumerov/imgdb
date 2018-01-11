@@ -15,7 +15,6 @@ let FormImage = {
             let data = new FormData();
             data.append("title", state.title);
             state.tags.forEach((tag) => { data.append("tags[]", tag.id); });
-            console.log(state.file);
             if (state.file instanceof File) {
                 data.append("file", state.file);
             }
@@ -37,15 +36,11 @@ const Index = new Vuex.Store({
         images: [],
         meta: {},
     },
-    mutations: {
-        set_images (state, payload) { state.images = payload; },
-        set_meta (state, payload) { state.meta = payload; },
-    },
     actions: {
-        get ({ commit }, page = 1) {
-            images.get(page).then((data) => {
-                commit("set_images", data.data);
-                commit("set_meta", data.meta);
+        load ({ state }, page = 1) {
+            return images.paginate(page).then((data) => {
+                state.images = data.data;
+                state.meta = data.meta;
             });
         },
 
@@ -94,37 +89,14 @@ const Show = new Vuex.Store({
                         destroy: "/api/images/" + image.slug,
                     }
 
-                })
-                .catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    }
+                    return Promise.resolve(data);
 
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
                 });
         },
         destroy ({}, slug) {
             return images.destroy(slug)
                 .then((response) => {
                     window.flash("The image is deleted.", "success");
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                })
-                .catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    }
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
                 });
         }
 
@@ -160,7 +132,6 @@ const Edit = new Vuex.Store({
                                 return;
                             }
 
-                            window.flash("Not found", "error");
                             setTimeout(function() {
                                 window.location.hash = "#/images/";
                                 window.location.reload();

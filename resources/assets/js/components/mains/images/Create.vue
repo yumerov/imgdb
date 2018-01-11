@@ -52,7 +52,10 @@
 
 <script>
 import { Create as store } from "../../../stores/Images.js";
+import { previewFile, validate, errors } from "../../../mixins.js";
+
 export default {
+    mixins: [previewFile, validate],
     store,
     computed: {
         image() { return this.$store.state.image },
@@ -63,36 +66,6 @@ export default {
     created() { this.$store.dispatch("get_tags") },
     methods: {
         resetForm() { this.$store.commit("reset"); },
-        handleFile(event) {
-            let vm = this;
-            let file = event.target.files[0];
-            if (file.type.search("image/") != -1) {
-                vm.$store.state.image.file = file;
-                vm.renderFile();
-            }
-        },
-        renderFile() {
-            let vm = this;
-            let file = vm.$store.state.image.file;
-
-            if (file) {
-                let reader = new FileReader();
-                reader.onload = (e) => {
-                    vm.$store.state.preview = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        },
-        validateTags(value) {
-            let vm = this;
-            vm.$store.state.image.tags = value;
-            if (value == null || value.length == 0) {
-                vm.errors.add("tags", "Select at least 1 tag.");
-                return;
-            }
-
-            vm.errors.remove("tags");
-        },
         submit() {
             let vm = this;
 
@@ -104,16 +77,12 @@ export default {
 
                 vm.$store.dispatch("save", vm.$store.getters["image/form"])
                     .then((response) => {
-
                         vm.resetForm();
                         window.flash("The image is created.", "success");
                         vm.$store.state.lastCreated = "/images/" + response.data.data.slug;
                     })
                     .catch((error) => {
-                        let errors = error.response.data.errors;
-                        for (let field in errors) {
-                            vm.errors.add(field, errors[field][0]);
-                        }
+                        vm.renderErrors(error);
                     });
             });
 

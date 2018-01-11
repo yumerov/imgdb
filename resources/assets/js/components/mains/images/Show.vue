@@ -23,20 +23,34 @@
 
 <script>
 import { Show as store} from "../../../stores/Images.js";
+import { redirect } from "../../../mixins.js";
 export default {
     store,
+    mixins: [redirect],
     computed: {
         image() { return this.$store.state.image },
         links() { return this.$store.state.links },
     },
     watch: {
-      '$route' (to, from) { this.$store.dispatch("show"); }
+        '$route' (to, from) {
+            this.$store.dispatch("show", to.params.slug);
+        }
     },
     created() {
-        this.$store.dispatch("show", this.$route.params.slug);
+        let vm = this;
+        vm.$store.dispatch("show", vm.$route.params.slug)
+            .catch((error) => {
+                vm.redirect("#/images");
+            });
     },
     methods: {
-        destroy() { this.$store.dispatch("destroy", this.$route.params.slug); }
+        destroy() {
+            let vm = this;
+            vm.$store.dispatch("destroy", vm.$route.params.slug)
+                .then(() => {
+                    vm.redirect("#/images");
+                });
+        }
     }
 }
 </script>

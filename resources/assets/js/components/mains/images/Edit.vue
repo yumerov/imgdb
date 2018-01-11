@@ -50,6 +50,7 @@
 
 <script>
 import { Edit as store } from "../../../stores/Images.js";
+import { redirect, previewFile, validate, errors } from "../../../mixins.js";
 export default {
     computed: {
         image() { return this.$store.state.image },
@@ -57,40 +58,11 @@ export default {
         preview() { return this.$store.state.preview },
     },
     store,
+    mixins: [redirect, previewFile, validate],
     created() {
         this.$store.dispatch("load", this.$route.params.slug);
     },
     methods: {
-        handleFile(event) {
-            let vm = this;
-            let file = event.target.files[0];
-            if (file.type.search("image/") != -1) {
-                vm.$store.state.image.file = file;
-                vm.renderFile();
-            }
-        },
-        renderFile() {
-            let vm = this;
-            let file = vm.$store.state.image.file;
-
-            if (file) {
-                let reader = new FileReader();
-                reader.onload = (e) => {
-                    vm.$store.state.preview = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        },
-        validateTags(value) {
-            let vm = this;
-            vm.$store.state.image.tags = value;
-            if (value == null || value.length == 0) {
-                vm.errors.add("tags", "Select at least 1 tag.");
-                return;
-            }
-
-            vm.errors.remove("tags");
-        },
         submit() {
             let vm = this;
             vm.$validator.validateAll().then((result) => {
@@ -102,17 +74,10 @@ export default {
                 vm.$store.dispatch("save")
                     .then((response) => {
                         window.flash("The image is updated.", "success");
-                        setTimeout(function() {
-                            window.location.hash = "#/images/" + response.data.data.slug + "/edit";
-                            window.location.reload();
-                        }, 2000);
+                        vm.redirect("#/images/" + response.data.data.slug + "/edit");
                     })
                     .catch((error) => {
-                        let data = error.response.data;
-                        let errors = data.errors;
-                        for (let field in errors) {
-                            vm.errors.add(field, errors[field][0]);
-                        }
+                        vm.renderErrors(error);
                     });
             });
         }

@@ -50,7 +50,12 @@ window.axios.interceptors.response.use(
         return response;
     }, (error) => {
         window.loaded();
-        window.flash(error.response.data.message, "error");
+        if (error.response.status == 404) {
+            let message = "Not found";
+        } else {
+            let message = error.response.data.message;
+        }
+        window.flash(message, "error");
         return Promise.reject(error);
     });
 

@@ -19,15 +19,11 @@ export default {
     store,
     methods: {
         openPage(page = 1) {
-            let vm = this;
-            vm.$store.dispatch("get", page).then((data) => {
-                vm.$router.push({ params: { page: data.meta.current_page } });
-            });
+            this.$store.dispatch("load", page);
         },
     },
     created() {
-        let vm = this;
-        vm.$store.dispatch("get", vm.$route.query.page);
+        this.openPage(this.$route.query.page);
     }
 }
 </script>

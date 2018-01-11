@@ -12,14 +12,14 @@ const actions = {
 }
 
 const images = {
-    get: (page = 1) => actions.get("/api/images", { params: { page } }),
+    paginate: (page = 1) => actions.get("/api/images", { params: { page } }),
     create: (data) => actions.post("/api/images", data),
     show: (slug) => actions.get("/api/images/" + slug),
     update: (slug, data) => {
         data.append("_method", "put");
         return actions.post("/api/images/" + slug, data);
     },
-    destroy: (slug,) => {
+    destroy: (slug) => {
         let data = new FormData();
         data.append("_method", "delete");
         return actions.post("/api/images/" + slug, data);
