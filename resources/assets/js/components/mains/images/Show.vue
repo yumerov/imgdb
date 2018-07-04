@@ -13,7 +13,7 @@
                 @click="destroy">
                 <i class="fa fa-remove"></i></button>
         </h1>
-        <tag v-for="tag in image.tags" :tag="tag"></tag>
+        <tags :tags="image.tags"></tags>
         <div class="columns">
             <image-thumb v-for="image in image.related_images" :image="image"></image-thumb>
         </div>
@@ -22,82 +22,33 @@
 </template>
 
 <script>
+import { Show as store} from "../../../stores/Images.js";
+import { redirect } from "../../../mixins.js";
 export default {
-    data() {
-        return {
-            image: {},
-            links: {
-                edit: "",
-                destroy: "",
-            }
-        };
+    store,
+    mixins: [redirect],
+    computed: {
+        image() { return this.$store.state.image },
+        links() { return this.$store.state.links },
     },
     watch: {
-      '$route' (to, from) {
-        let vm = this;
-        vm.loadImage();
-      }
+        '$route' (to, from) {
+            this.$store.dispatch("show", to.params.slug);
+        }
     },
     created() {
         let vm = this;
-        vm.loadImage();
+        vm.$store.dispatch("show", vm.$route.params.slug)
+            .catch((error) => {
+                vm.redirect("#/images");
+            });
     },
     methods: {
-        loadImage() {
-            window.loading();
-            let vm = this;
-            let url = "/api/images/" + vm.$route.params.slug;
-            axios.get(url)
-                .then((response) => {
-                    vm.image = response.data.data;
-                    vm.links = {
-                        edit: "/images/" + vm.image.slug + "/edit",
-                        destroy: "/api/images/" + vm.image.slug,
-                    }
-                    window.loaded();
-                }).catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    } else {
-                        window.flash(error.response.data.message, "error");
-                    }
-                    window.loaded();
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                });
-
-        },
         destroy() {
-            window.loading();
             let vm = this;
-            let data = new FormData();
-            data.append("_method", "delete");
-
-            axios.post(vm.links.destroy, data)
-                .then((response) => {
-                    window.flash("The imaeg is deleted.", "success");
-                    window.loaded();
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
-                })
-                .catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    } else {
-                        window.flash(data.message, "error");
-                    }
-                    window.loaded();
-
-                    setTimeout(function() {
-                        window.location.hash = "#/images/";
-                        window.location.reload();
-                    }, 2000);
+            vm.$store.dispatch("destroy", vm.$route.params.slug)
+                .then(() => {
+                    vm.redirect("#/images");
                 });
         }
     }

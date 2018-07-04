@@ -23,6 +23,7 @@
         "vee-validate": "^2.0",
         "vue-flash": "^2.1",
         "vue2-loading": "^0.0.16",
+        "vuex": "^3.0",
         "font-awesome": "^4.7",
         "laravel-vue-bulma-pagination": "^1.0.1"
     }

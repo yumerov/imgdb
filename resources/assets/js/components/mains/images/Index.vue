@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <div class="container">
-            <div class="columns">
+            <div class="columns is-multiline">
                 <image-thumb v-for="image in images" :image="image"></image-thumb>
             </div>
             <pagination :pagedata="meta" @page-clicked="openPage"></pagination>
@@ -10,32 +10,19 @@
 </template>
 
 <script>
+import { Index as store} from "../../../stores/Images.js";
 export default {
-    data() {
-        return {
-            images: [],
-            links: {},
-            meta: {},
-        }
+    computed: {
+        images() { return this.$store.state.images },
+        meta() { return this.$store.state.meta }
     },
+    store,
     methods: {
         openPage(page = 1) {
-            window.loading();
-            let url = "/api/images?page=" + page;
-            axios.get(url).then(this.handleResponse);
+            this.$store.dispatch("load", page);
         },
-        handleResponse(response) {
-            let d = response.data;
-            this.images = d.data;
-            this.links = d.links;
-            this.meta = d.meta;
-            this.$router.push({ params: { page: d.meta.current_page } });
-            window.loaded();
-        },
-
-
     },
-    mounted() {
+    created() {
         this.openPage(this.$route.query.page);
     }
 }

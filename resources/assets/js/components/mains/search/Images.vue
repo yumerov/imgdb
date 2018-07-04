@@ -16,7 +16,8 @@
                     <div class="control">
                         <v-select multiple label="name" value="id"
                             v-model="search.positive_tags"
-                            :options="tags"></v-select>
+                            :options="tags.positive"
+                            :on-change="changePositive"></v-select>
                     </div>
                 </div>
                 <div class="column field">
@@ -24,12 +25,13 @@
                     <div class="control">
                         <v-select multiple label="name" value="id"
                             v-model="search.negative_tags"
-                            :options="tags"></v-select>
+                            :options="tags.negative"
+                            :on-change="changeNegative"></v-select>
                     </div>
                 </div>
                 <div class="column field">
                     <div class="label"></div>
-                    <div class="control">
+                    <div class="control has-text-centered">
                         <button class="button is-large" @click="submit">
                             Search
                         </button>
@@ -55,28 +57,61 @@ export default {
                 negative_tags: [],
 
             },
-            tags: [],
+            tags: {
+                all: [],
+                positive: [],
+                negative: [],
+            },
             meta: {},
             results: [],
         }
     },
     created() {
-        window.loading();
         let vm = this;
         axios.get("/api/tags")
             .then((response) => {
-                vm.tags = response.data.data;
-                window.loaded();
-            })
-            .catch((error) => {
-                let data = error.response.data;
-                window.flash(data.message, "error");
-                window.loaded();
+                let d = response.data.data;
+                vm.tags = {
+                    all: d,
+                    positive: d,
+                    negative: d,
+                };
             });
     },
     methods: {
+        changeNegative(value) {
+            if (value.length == 0) {
+                return;
+            }
+            let vm = this;
+            let ids = value.map((tag) => tag.id);
+            let not_excluded = (tag) => !ids.includes(tag.id);
+            if (vm.tags.positive.length == vm.tags.all.filter(not_excluded).length) {
+                return;
+            }
+            vm.tags.positive = vm.tags.all.filter(not_excluded);
+            if (vm.search.positive_tags.length == vm.search.positive_tags.filter(not_excluded)) {
+                return;
+            }
+            vm.search.positive_tags = vm.search.positive_tags.filter(not_excluded);
+        },
+        changePositive(value) {
+            if (value.length == 0) {
+                return;
+            }
+            let vm = this;
+            let ids = value.map((tag) => tag.id);
+            let not_excluded = (tag) => !ids.includes(tag.id);
+            if (vm.tags.negative.length == vm.tags.all.filter(not_excluded).length) {
+                return;
+            }
+            vm.tags.negative = vm.tags.all.filter(not_excluded);
+            if (vm.search.negative_tags.length == vm.search.negative_tags.filter(not_excluded)) {
+                return;
+            }
+            vm.search.negative_tags = vm.search.negative_tags.filter(not_excluded);
+        },
         openPage(page = 1) {
-            window.loading();
             let vm = this;
             let url = "/api/search/images";
             let data = {};
@@ -88,7 +123,6 @@ export default {
             let d = response.data;
             this.results = d.data;
             this.meta = d.meta;
-            window.loaded();
         },
         transformSearchData() {
             let vm = this;
@@ -98,7 +132,6 @@ export default {
             return data;
         },
         submit() {
-            window.loading();
             let vm = this;
             vm.results = [];
             axios.get("/api/search/images", { params: vm.transformSearchData() })
@@ -106,12 +139,6 @@ export default {
                     let d = response.data
                     vm.results = d.data;
                     vm.meta = d.meta
-                    window.loaded();
-                })
-                .catch((error) => {
-                    let data = error.response.data;
-                    window.flash(data.message, "error");
-                    window.loaded();
                 });
         }
     }

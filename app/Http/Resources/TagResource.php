@@ -18,7 +18,7 @@ class TagResource extends Resource
             'id' => $this->id,
             'name' => $this->name,
             'slug' => $this->slug,
-            'images' => $request->input('with_images', false) ? ImageResource::collection($this->images) : [],
+            'images' => $request->input('with_images', false) ? ImageSimpleResource::collection($this->images) : [],
         ];
     }
 }

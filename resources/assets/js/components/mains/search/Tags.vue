@@ -30,18 +30,11 @@ export default {
     },
     methods: {
         submit() {
-            window.loading();
             let vm = this;
             vm.results = [];
             axios.get("/api/search/tags", { params: vm.search })
                 .then((response) => {
                     vm.results = response.data.data;
-                    window.loaded();
-                })
-                .catch((error) => {
-                    let data = error.response.data;
-                    window.flash(data.message, "error");
-                    window.loaded();
                 });
         }
     }

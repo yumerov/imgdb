@@ -8,9 +8,9 @@
 
                 </div>
                 <div class="column is-three-quarters">
-                <div class="columns is-multiline">
-                    <image-thumb v-if="tag.images" v-for="image in tag.images" :image="image"></image-thumb>
-                </div>
+                    <div class="columns is-multiline">
+                        <image-thumb v-if="tag.images" v-for="image in tag.images" :image="image"></image-thumb>
+                    </div>
                 </div>
             </div>
         </div>
@@ -26,7 +26,6 @@
             }
         },
         created() {
-            window.loading();
             let vm = this;
             let url = "/api/tags/" + vm.$route.params.slug + "?with_images=true";
             axios.get(url)
@@ -36,15 +35,7 @@
                         edit: "/tags/" + vm.tag.slug + "/edit",
                         destroy: "/api/tags/" + vm.tag.slug,
                     }
-                    window.loaded();
                 }).catch((error) => {
-                    if (error.response.status == 404) {
-                        window.flash("Not found", "error");
-                    } else {
-                        window.flash(error.response.data.message, "error");
-                    }
-                    window.loaded();
-
                     setTimeout(function() {
                         window.location.hash = "#/tags/";
                         window.location.reload();
@@ -53,7 +44,6 @@
         },
         methods: {
             destroy() {
-                window.loading();
                 let vm = this;
                 let data = new FormData();
                 data.append("_method", "delete");
@@ -61,7 +51,6 @@
                 axios.post(vm.links.destroy, data)
                     .then((response) => {
                         window.flash("The tag is deleted.", "success");
-                        window.loaded();
 
                         setTimeout(function() {
                             window.location.hash = "#/tags/";
@@ -74,7 +63,6 @@
                         } else {
                             window.flash(data.message, "error");
                         }
-                        window.loaded();
 
                         setTimeout(function() {
                             window.location.hash = "#/tags/";

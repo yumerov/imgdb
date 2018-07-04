@@ -4,7 +4,7 @@ namespace App\Actions\Images;
 
 use App\Image;
 use App\Http\Requests\ImageStoreRequest;
-use App\Http\Resources\ImageResource;
+use App\Http\Resources\ImageFullResource;
 use Illuminate\Http\Request;
 
 class Store {
@@ -18,6 +18,6 @@ class Store {
         $image->save();
         $image->tags()->sync($request->input("tags"));
 
-        return new ImageResource($image);
+        return new ImageFullResource($image);
     }
 }

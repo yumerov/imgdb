@@ -1,0 +1,1989 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ima",
+				"images"
+			],
+			[
+				"tab",
+				"tabMap"
+			],
+			[
+				"nega",
+				"negative_tags"
+			],
+			[
+				"positive_",
+				"positive_tags"
+			],
+			[
+				"posi",
+				"positive"
+			],
+			[
+				"file",
+				"filePath"
+			],
+			[
+				"exc",
+				"excludedTags"
+			],
+			[
+				"tag",
+				"tags"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"re",
+				"results"
+			],
+			[
+				"ec",
+				"except"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"upda",
+				"updateData"
+			],
+			[
+				"va",
+				"validator"
+			],
+			[
+				"valida",
+				"validateTags"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"Ima",
+				"ImageResource"
+			],
+			[
+				"ope",
+				"openPage"
+			],
+			[
+				"is",
+				"isFirstPage"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"Vue",
+				"VueRouter"
+			],
+			[
+				"Rou",
+				"Route::group\tCreate a Group of Routes"
+			],
+			[
+				"read",
+				"readURL"
+			],
+			[
+				"selec",
+				"selected_tags"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"colum",
+				"column"
+			],
+			[
+				"regex",
+				"regexValidationEmailValidation"
+			],
+			[
+				"pa",
+				"payment"
+			],
+			[
+				"cust",
+				"customer"
+			],
+			[
+				"custo",
+				"customer_id"
+			],
+			[
+				"compa",
+				"company_name"
+			],
+			[
+				"aut",
+				"authors"
+			],
+			[
+				"autho",
+				"author_id"
+			],
+			[
+				"auth",
+				"author_id"
+			],
+			[
+				"fi",
+				"field"
+			],
+			[
+				"fie",
+				"fields"
+			],
+			[
+				"error",
+				"errors"
+			],
+			[
+				"que",
+				"question"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"candi",
+				"candidates"
+			],
+			[
+				"error_",
+				"error_phone"
+			],
+			[
+				"check",
+				"checkRequired"
+			],
+			[
+				"is_",
+				"is_valid"
+			],
+			[
+				"in",
+				"intendedFor"
+			],
+			[
+				"lab",
+				"labels"
+			],
+			[
+				"are",
+				"areNamesValid"
+			],
+			[
+				"qu",
+				"questions"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"border-",
+				"border-color"
+			],
+			[
+				"log_",
+				"logo_error"
+			],
+			[
+				"data",
+				"dataTransfer"
+			],
+			[
+				"logo_",
+				"logo_error"
+			],
+			[
+				"base",
+				"base64"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"na",
+				"nameValidation"
+			],
+			[
+				"loca",
+				"location"
+			],
+			[
+				"getLogo",
+				"getLogoUrl"
+			],
+			[
+				"public",
+				"public_path"
+			],
+			[
+				"belongs",
+				"belongsTo"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"pub",
+				"public_path"
+			],
+			[
+				"jobs",
+				"jobsQuery"
+			],
+			[
+				"Route",
+				"Route::resource\tRoute to a RESTful Controller"
+			],
+			[
+				"Console",
+				"ConsoleDecorator"
+			],
+			[
+				"is_do",
+				"is_done"
+			],
+			[
+				"task",
+				"taskRepository"
+			],
+			[
+				"shape",
+				"shapes"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"rad",
+				"radius"
+			],
+			[
+				"respondW",
+				"respondWithpaginator"
+			],
+			[
+				"trams",
+				"transformer"
+			],
+			[
+				"truncate",
+				"truncateTables"
+			],
+			[
+				"lesson",
+				"lessonTransformer"
+			],
+			[
+				"Lesson",
+				"LessonTransformer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "resources/assets/js/stores/Images.js",
+			"settings":
+			{
+				"buffer_size": 1545,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/stores/Home.js",
+			"settings":
+			{
+				"buffer_size": 708,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/stores/api.js",
+			"settings":
+			{
+				"buffer_size": 1044,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/components/mains/Home.vue",
+			"settings":
+			{
+				"buffer_size": 1088,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/components/mains/images/Create.vue",
+			"settings":
+			{
+				"buffer_size": 4916,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/assets/js/components/mains/tags/Index.vue",
+			"settings":
+			{
+				"buffer_size": 2072,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "TODO.md",
+			"settings":
+			{
+				"buffer_size": 1393,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 308,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 276.0,
+		"last_filter": "Project",
+		"selected_items":
+		[
+			[
+				"Project",
+				"Project: Save As"
+			],
+			[
+				"rename",
+				"ANF: Rename File"
+			],
+			[
+				"anfre",
+				"ANF: Rename File"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"delete",
+				"ANF: Delete Current File"
+			],
+			[
+				"sett",
+				"Preferences: Settings"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"split",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"spli",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"destr",
+				"Layout: Destroy Current Pane"
+			],
+			[
+				"dele",
+				"ANF: Delete Current File"
+			],
+			[
+				"destroy",
+				"Layout: Destroy Current Pane"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"close",
+				"File: Close All"
+			],
+			[
+				"splithor",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"new fi",
+				"ANF: New File"
+			],
+			[
+				"splitho",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"splir",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"destro",
+				"Layout: Destroy Current Pane"
+			],
+			[
+				"layout",
+				"Layout: Destroy Current Pane"
+			],
+			[
+				"anfrena",
+				"ANF: Rename File"
+			],
+			[
+				"deletre",
+				"ANF: Delete Current File"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"delte",
+				"ANF: Delete Current File"
+			],
+			[
+				"spl",
+				"Layout: Split Current Pane Vertical"
+			],
+			[
+				"dump",
+				"Composer: Dump Autoload"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"spliho",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"update",
+				"Composer: Update"
+			],
+			[
+				"comupdate",
+				"Composer: Update"
+			],
+			[
+				"composer update",
+				"Composer: Update"
+			],
+			[
+				"composer",
+				"Composer: Dump Autoload"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"clo",
+				"File: Close All"
+			],
+			[
+				"clos",
+				"File: Close All"
+			],
+			[
+				"format",
+				"SQL Beautifier: Format Current SQL File"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ren",
+				"ANF: Rename File"
+			],
+			[
+				"synphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"syntphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"clsoe",
+				"File: Close All"
+			],
+			[
+				"diff",
+				"FileDiffs: Menu"
+			],
+			[
+				"fileclosea",
+				"File: Close All"
+			],
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"laymove",
+				"Layout: Move File to Pane on the Below"
+			],
+			[
+				"git ",
+				"GitStatus: Changed files"
+			],
+			[
+				"sytphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"blade",
+				"Set Syntax: Laravel Blade"
+			],
+			[
+				"renae",
+				"ANF: Rename File"
+			],
+			[
+				"compani",
+				"PHPCompanion:Goto Definition Scope"
+			],
+			[
+				"env",
+				"Set Syntax: DotENV"
+			],
+			[
+				"apa",
+				"Set Syntax: Apache Conf"
+			],
+			[
+				"nginx",
+				"Set Syntax: nginx"
+			],
+			[
+				"JSON",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"compan",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"movebelo",
+				"Layout: Move File to Pane on the Below"
+			],
+			[
+				"delet",
+				"ANF: Delete Current File"
+			],
+			[
+				"sapce",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"newfie",
+				"ANF: New File"
+			],
+			[
+				"implement",
+				"PHPCompanion:Implement Interface"
+			],
+			[
+				"company",
+				"PHPCompanion:Expand Fully Qualified Class Name"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"splitver",
+				"Layout: Split Current Pane Vertical"
+			],
+			[
+				"inser",
+				"PHPCompanion:Insert Constructor Property"
+			],
+			[
+				"proper",
+				"PHPCompanion:Insert Constructor Property"
+			],
+			[
+				"import",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"impot",
+				"Plugin Development: Profile Events"
+			],
+			[
+				"interfa",
+				"PHPCompanion:Implement Interface"
+			],
+			[
+				"intefa",
+				"PHPCompanion:Implement Interface"
+			],
+			[
+				"php ",
+				"PHPCompanion:Expand Fully Qualified Class Name"
+			],
+			[
+				"php",
+				"PHP: Generate Getters and Setters"
+			],
+			[
+				"spluit",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"rene",
+				"ANF: Rename File"
+			],
+			[
+				"removepac",
+				"Package Control: Remove Package"
+			],
+			[
+				"isnt",
+				"Package Control: Install Package"
+			],
+			[
+				"dlete",
+				"File: Delete"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"moveab",
+				"Layout: Move File to Pane on the Above"
+			],
+			[
+				"apac",
+				"Set Syntax: Apache Conf"
+			],
+			[
+				"move bel",
+				"Layout: Move File to Pane on the Below"
+			],
+			[
+				"icons",
+				"A File Icon: Revert to a Freshly Installed State"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"splith",
+				"Layout: Split Current Pane Horizontal"
+			],
+			[
+				"minima",
+				"View: Toggle Minimap"
+			],
+			[
+				"add fo",
+				"Project: Add Folder"
+			]
+		],
+		"width": 430.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/levent/edu/imgdb",
+		"/home/levent/edu/imgdb/resources",
+		"/home/levent/edu/imgdb/resources/assets",
+		"/home/levent/edu/imgdb/resources/assets/js",
+		"/home/levent/edu/imgdb/resources/assets/js/components",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/images",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/search",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/tags",
+		"/home/levent/edu/imgdb/resources/assets/js/stores",
+		"/home/levent/edu/imgdb/resources/assets/sass"
+	],
+	"file_history":
+	[
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/images/Index.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/stores/images/Images.js",
+		"/home/levent/edu/imgdb/resources/assets/js/bootstrap.js",
+		"/home/levent/edu/imgdb/resources/assets/js/app.js",
+		"/home/levent/edu/imgdb/resources/assets/js/components.js",
+		"/home/levent/edu/imgdb/resources/assets/js/stores/actions.js",
+		"/home/levent/edu/imgdb/resources/assets/js/stores/Images.js",
+		"/home/levent/edu/imgdb/resources/assets/js/stores/images",
+		"/home/levent/edu/imgdb/resources/assets/js/routes.js",
+		"/home/levent/edu/imgdb/package.json",
+		"/home/levent/edu/imgdb/resources/assets/js/components/Header.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/images/Create.vue",
+		"/home/levent/edu/imgdb/app/Actions/Images/Update.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/Api/TagsController.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/Api/ImagesController.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/tags/Create.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/images/Edit.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/images/Show.vue",
+		"/home/levent/edu/imgdb/readme.md",
+		"/home/levent/edu/imgdb/app/Actions/Images/Store.php",
+		"/home/levent/edu/imgdb/app/Actions/Images/Create.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/Home.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/search/Images.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/tags/Index.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/tags/Show.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/tags/Edit.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/search/Tags.vue",
+		"/home/levent/edu/imgdb/app/Tag.php",
+		"/home/levent/edu/imgdb/storage/logs/laravel.log",
+		"/home/levent/edu/imgdb/app/Http/Resources/TagResource.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/shared/ImageThumb.vue",
+		"/home/levent/edu/imgdb/resources/assets/js/components/shared/Tags.vue",
+		"/home/levent/edu/imgdb/.env",
+		"/home/levent/edu/imgdb/app/Http/Resources/ImageFullResource.php",
+		"/home/levent/edu/imgdb/app/Image.php",
+		"/home/levent/edu/imgdb/storage/logs/sql/2018-01-09-log.sql",
+		"/home/levent/edu/imgdb/storage/logs/sql/2018-01-08-log.sql",
+		"/home/levent/edu/imgdb/app/Console/Commands/Export.php",
+		"/home/levent/edu/imgdb/app/Http/Resources/ImageSimpleResource.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/Api/SearchController.php",
+		"/home/levent/edu/imgdb/app/Console/Commands/Restore.php",
+		"/home/levent/edu/imgdb/config/database.php",
+		"/home/levent/edu/imgdb/app/Console/Commands/DataCommand.php",
+		"/home/levent/edu/imgdb/app/Http/Resources/ImageResource.php",
+		"/home/levent/edu/imgdb/composer.json",
+		"/home/levent/edu/imgdb/app/Http/Controllers/DataCommand.php",
+		"/home/levent/edu/imgdb/storage/backups/.gitignore",
+		"/home/levent/edu/imgdb/app/Console/Kernel.php",
+		"/home/levent/edu/imgdb/routes/api.php",
+		"/home/levent/edu/imgdb/routes/console.php",
+		"/home/levent/edu/imgdb/config/sql_logger.php",
+		"/home/levent/edu/imgdb/TODO.md",
+		"/home/levent/edu/imgdb/resources/assets/js/events.js",
+		"/home/levent/edu/imgdb/resources/assets/js/components/App.vue",
+		"/home/levent/edu/imgdb/app/Actions/Images/Destroy.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Destroy.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Update.php",
+		"/home/levent/edu/imgdb/app/Http/Requests/TagUpdateRequest.php",
+		"/home/levent/edu/imgdb/resources/views/images/edit.blade.php",
+		"/home/levent/edu/imgdb/resources/views/tags/create.blade.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/shared/Flash.vue",
+		"/home/levent/edu/imgdb/resources/views/tags/show.blade.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/shared/Tag.vue",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Show.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Store.php",
+		"/home/levent/edu/imgdb/database/migrations/2017_12_21_110640_create_tags_table.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/Api/RecentController.php",
+		"/home/levent/edu/imgdb/resources/views/index.blade.php",
+		"/home/levent/edu/imgdb/app/Http/Requests/ImageUpdateRequest.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/NavItem.vue",
+		"/home/levent/edu/imgdb/app/Http/Requests/ImageStoreRequest.php",
+		"/home/levent/edu/imgdb/app/Actions/Images/Edit.php",
+		"/home/levent/edu/imgdb/app/Actions/Images/Show.php",
+		"/home/levent/edu/imgdb/resources/views/shared/field-error.blade.php",
+		"/home/levent/edu/imgdb/app/Actions/Images/Index.php",
+		"/home/levent/edu/imgdb/resources/views/tags/index.blade.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Index.php",
+		"/home/levent/edu/imgdb/resources/assets/sass/app.scss",
+		"/home/levent/edu/imgdb/routes/web.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/TagsController.php",
+		"/home/levent/edu/imgdb/.gitignore",
+		"/home/levent/edu/imgdb/resources/views/images/create.blade.php",
+		"/home/levent/edu/imgdb/app/Http/Controllers/HomeController.php",
+		"/home/levent/edu/imgdb/resources/views/images/show.blade.php",
+		"/home/levent/edu/imgdb/app/Http/Resources/ImageCollection.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/shared/Pagination.vue",
+		"/home/levent/edu/imgdb/resources/views/images/index.blade.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/mains/Images.vue",
+		"/home/levent/edu/imgdb/public/js/app.js",
+		"/home/levent/edu/imgdb/resources/assets/js/bulma-extensions.js",
+		"/home/levent/edu/imgdb/app/Http/Controllers/ImagesController.php",
+		"/home/levent/edu/imgdb/resources/views/layout.blade.php",
+		"/home/levent/edu/imgdb/resources/views/shared/tag.blade.php",
+		"/home/levent/edu/imgdb/resources/views/shared/image-thumb.blade.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/Footer.vue",
+		"/home/levent/edu/imgdb/database/migrations/2017_12_21_134202_create_images_table.php",
+		"/home/levent/edu/imgdb/app/Actions/Home/Index.php",
+		"/home/levent/edu/imgdb/resources/assets/js/components/Example.vue",
+		"/home/levent/edu/imgdb/package-lock.json",
+		"/home/levent/edu/imgdb/config/app.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Create.php",
+		"/home/levent/edu/imgdb/resources/assets/sass/bulma.sass",
+		"/home/levent/edu/imgdb/public/img/96e6cb706870e6b5813c70fca3488596.jpeg",
+		"/home/levent/edu/imgdb/resources/views/tags/edit.blade.php",
+		"/home/levent/edu/imgdb/img/dsfsdfsde.gif",
+		"/home/levent/edu/imgdb/app/Http/Requests/BaseRequest.php",
+		"/home/levent/edu/imgdb/app/Http/Requests/TagRequest.php",
+		"/home/levent/edu/imgdb/resources/views/shared/success.blade.php",
+		"/home/levent/edu/imgdb/app/Actions/Tags/Edit.php",
+		"/home/levent/edu/imgdb/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+		"/home/levent/edu/imgdb/app/Http/Requests/TagStoreRequest.php",
+		"/home/levent/edu/imgdb/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
+		"/home/levent/edu/imgdb/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/home/levent/edu/imgdb/resources/views/welcome.blade.php",
+		"/home/levent/edu/imgdb/database/migrations/2017_12_21_142445_create_image_tag_table.php",
+		"/home/levent/edu/imgdb/database/seeds/DatabaseSeeder.php",
+		"/home/levent/edu/imgdb/database/factories/ImageFactory.php",
+		"/home/levent/edu/imgdb/database/seeds/ImageSeeder.php",
+		"/home/levent/edu/imgdb/database/factories/TagFactory.php",
+		"/home/levent/edu/imgdb/database/seeds/TagSeeder.php",
+		"/home/levent/edu/imgdb/database/factories/ModelFactory.php",
+		"/home/levent/.config/sublime-text-3/Packages/Composer/composer-sublime.sublime-settings",
+		"/home/levent/.config/sublime-text-3/Packages/User/composer-sublime.sublime-settings",
+		"/home/levent/edu/imgdb/vendor/laravel/framework/src/Illuminate/Support/Str.php",
+		"/home/levent/edu/imgdb/database/migrations/2017_12_21_110148_create_tags_table.php",
+		"/home/levent/edu/imgdb/database/migrations/2017_12_21_110026_create_tags_table.php",
+		"/home/levent/Projects/delp-pro/code/delt-pro/src/resources/views/jobs/components/candidates.blade.php",
+		"/home/levent/Projects/delp-pro/code/delt-pro/src/app/Actions/Questionnaires/Store.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 181.0,
+		"where_history":
+		[
+			"*.vue",
+			"*.php",
+			"*.blade.php"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tags",
+			"meta",
+			"images",
+			"}\n",
+			"d",
+			"vm.$store.dispatch",
+			"images",
+			"Vue.http",
+			".enter",
+			"enter",
+			"axios",
+			"window.flash",
+			"window.load",
+			"window.loading();",
+			"window.load",
+			"window.loading();",
+			"window.loa",
+			"window.loaded",
+			"indow.loaded();",
+			"window.loading()",
+			"window.loading();",
+			"response",
+			"res",
+			"response",
+			"window.loaded();",
+			"loaded",
+			"is-one-half",
+			"column",
+			".positive_tags",
+			"positive_tags.",
+			".positive",
+			"positive.",
+			"search.",
+			"tags.",
+			"positive",
+			"tags",
+			"vm.tags",
+			"tags",
+			"-wrapper",
+			"tags-wrapper",
+			"tags_count",
+			"ImageResource",
+			"where",
+			"from",
+			" as ",
+			"select",
+			"restoring",
+			"$filePath",
+			"filePath",
+			"$file",
+			"includedTags",
+			"transformBeforeSubmit",
+			"positive_",
+			"vm.",
+			"data.",
+			"positive",
+			"posititive",
+			"- ",
+			"response.data",
+			"links",
+			"Tags",
+			"window.loading()",
+			"axios",
+			"\n        ",
+			"axios",
+			"this",
+			"vm.",
+			"isLoading",
+			"[ ]",
+			"Create",
+			"to",
+			"next",
+			":to",
+			"[ ]",
+			"image",
+			"TagsCreate",
+			"Show",
+			"<my-flash></my-flash>",
+			"image",
+			"Index",
+			"$except",
+			"self",
+			"flash",
+			"d.",
+			"window.events",
+			"images",
+			"file",
+			"this",
+			"title",
+			"this",
+			"this.",
+			"[x]",
+			"Show",
+			"openUrl",
+			"href",
+			"self.",
+			"first",
+			"links",
+			"Home",
+			"Vue.component",
+			"Router",
+			"VueRouter",
+			"VueRou",
+			"Router",
+			"VueRoute",
+			"init",
+			"title",
+			"header",
+			"nav",
+			"font-",
+			"lara",
+			"alert",
+			"tag",
+			"TODO",
+			"tag",
+			"\"title\"",
+			"Tag",
+			"TagRequest",
+			"<a class=\"button",
+			"is-4",
+			"image",
+			"$tag",
+			"Tag",
+			"php7.0-",
+			"    ",
+			"Applied",
+			"Apllied",
+			" - "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "resources/assets/js/stores/Images.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								989,
+								989
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/assets/js/stores/Home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								270,
+								270
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "resources/assets/js/stores/api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "resources/assets/js/components/mains/Home.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Vue Syntax Highlight/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "resources/assets/js/components/mains/images/Create.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4916,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3085,
+								3085
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Vue Syntax Highlight/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "resources/assets/js/components/mains/tags/Index.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Vue Syntax Highlight/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "TODO.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								521,
+								521
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"history_list_is_closing": true,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 231.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								273,
+								273
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"history_list_is_closing": true,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.composer":
+	{
+		"height": 261.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "imgdb.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inde",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"index.vue",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"ima/create.vue",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"image/index.vue",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"home.vue",
+				"resources/assets/js/components/mains/Home.vue"
+			],
+			[
+				"routes",
+				"resources/assets/js/routes.js"
+			],
+			[
+				"header",
+				"resources/assets/js/components/Header.vue"
+			],
+			[
+				"im/cre",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"tag/cre.vue",
+				"resources/assets/js/components/mains/tags/Create.vue"
+			],
+			[
+				"edit.vue",
+				"resources/assets/js/components/mains/images/Edit.vue"
+			],
+			[
+				"update",
+				"app/Actions/Images/Update.php"
+			],
+			[
+				"readme",
+				"readme.md"
+			],
+			[
+				"action/.php",
+				"app/Actions/Images/Create.php"
+			],
+			[
+				"im/show",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"imageco",
+				"app/Http/Controllers/Api/ImagesController.php"
+			],
+			[
+				"ima/create",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"tagscon",
+				"app/Http/Controllers/Api/TagsController.php"
+			],
+			[
+				"tasindex",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"boot",
+				"resources/assets/js/bootstrap.js"
+			],
+			[
+				"lara",
+				"storage/logs/laravel.log"
+			],
+			[
+				"tag.php",
+				"app/Tag.php"
+			],
+			[
+				"tagcontr",
+				"app/Http/Controllers/Api/TagsController.php"
+			],
+			[
+				"maintags/index.vue",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"searchim",
+				"resources/assets/js/components/mains/search/Images.vue"
+			],
+			[
+				"imindex.vue",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"imthu",
+				"resources/assets/js/components/shared/ImageThumb.vue"
+			],
+			[
+				"im/show.vue",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"show.vue",
+				"resources/assets/js/components/mains/tags/Show.vue"
+			],
+			[
+				"tags.vue",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"compo.js",
+				"resources/assets/js/components.js"
+			],
+			[
+				"tag.vue",
+				"resources/assets/js/components/shared/Tag.vue"
+			],
+			[
+				".en",
+				".env"
+			],
+			[
+				"thumb",
+				"resources/assets/js/components/shared/ImageThumb.vue"
+			],
+			[
+				"imag",
+				"app/Image.php"
+			],
+			[
+				"fullres",
+				"app/Http/Resources/ImageFullResource.php"
+			],
+			[
+				"2018",
+				"storage/logs/sql/2018-01-08-log.sql"
+			],
+			[
+				".env",
+				".env"
+			],
+			[
+				"laral",
+				"storage/logs/laravel.log"
+			],
+			[
+				"imshow.vue",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"searchcon",
+				"app/Http/Controllers/Api/SearchController.php"
+			],
+			[
+				"imagefresource",
+				"app/Http/Resources/ImageFullResource.php"
+			],
+			[
+				"imagecontro",
+				"app/Http/Controllers/Api/ImagesController.php"
+			],
+			[
+				"image",
+				"app/Image.php"
+			],
+			[
+				"env",
+				".env"
+			],
+			[
+				"datac",
+				"app/Console/Commands/DataCommand.php"
+			],
+			[
+				"datacom",
+				"app/Http/Controllers/DataCommand.php"
+			],
+			[
+				"compos",
+				"composer.json"
+			],
+			[
+				"restore",
+				"app/Console/Commands/Restore.php"
+			],
+			[
+				"kernel",
+				"app/Console/Kernel.php"
+			],
+			[
+				"con/data.php",
+				"config/database.php"
+			],
+			[
+				"consl.",
+				"routes/console.php"
+			],
+			[
+				"app/console/php",
+				"app/Console/Kernel.php"
+			],
+			[
+				"console/",
+				"app/Console/Commands/Export.php"
+			],
+			[
+				".e",
+				".env"
+			],
+			[
+				"logs/sql",
+				"storage/logs/sql/2018-01-08-log.sql"
+			],
+			[
+				"sql_lo",
+				"config/sql_logger.php"
+			],
+			[
+				"image.php",
+				"app/Image.php"
+			],
+			[
+				"ima/crea",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"images.vue",
+				"resources/assets/js/components/mains/search/Images.vue"
+			],
+			[
+				"componen",
+				"resources/assets/js/components.js"
+			],
+			[
+				"ima/inde",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"tagsc",
+				"app/Http/Controllers/Api/TagsController.php"
+			],
+			[
+				"create.vue",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"index.",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"head",
+				"resources/assets/js/components/Header.vue"
+			],
+			[
+				"searc",
+				"app/Http/Controllers/Api/SearchController.php"
+			],
+			[
+				"api.",
+				"routes/api.php"
+			],
+			[
+				"todo",
+				"TODO.md"
+			],
+			[
+				"read",
+				"readme.md"
+			],
+			[
+				"image/index",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"tags/index",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"image/inde",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"ma/tags/index",
+				"resources/assets/js/components/mains/tags/Index.vue"
+			],
+			[
+				"ma/tags/edit",
+				"resources/assets/js/components/mains/tags/Edit.vue"
+			],
+			[
+				"main/tags/create.vue",
+				"resources/assets/js/components/mains/tags/Create.vue"
+			],
+			[
+				"boots",
+				"resources/assets/js/bootstrap.js"
+			],
+			[
+				"compoen",
+				"resources/assets/js/components.js"
+			],
+			[
+				"packajso",
+				"package.json"
+			],
+			[
+				"app.vue",
+				"resources/assets/js/components/App.vue"
+			],
+			[
+				"event",
+				"resources/assets/js/events.js"
+			],
+			[
+				"im/sh.vue",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"tag/des",
+				"app/Actions/Tags/Destroy.php"
+			],
+			[
+				"tagupda",
+				"app/Http/Requests/TagUpdateRequest.php"
+			],
+			[
+				"ima/edit",
+				"resources/views/images/edit.blade.php"
+			],
+			[
+				"ima/sho",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"create.blade",
+				"resources/views/tags/create.blade.php"
+			],
+			[
+				"tagresour",
+				"app/Http/Resources/TagResource.php"
+			],
+			[
+				"reoutes",
+				"resources/assets/js/routes.js"
+			],
+			[
+				"show.bla",
+				"resources/views/tags/show.blade.php"
+			],
+			[
+				"show.",
+				"resources/assets/js/components/mains/images/Show.vue"
+			],
+			[
+				"flash",
+				"resources/assets/js/components/shared/Flash.vue"
+			],
+			[
+				"ima/index",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"sha/tag",
+				"resources/assets/js/components/shared/Tag.vue"
+			],
+			[
+				"mig/_tags",
+				"database/migrations/2017_12_21_110640_create_tags_table.php"
+			],
+			[
+				"imgeresr",
+				"app/Http/Resources/ImageResource.php"
+			],
+			[
+				"todo.md",
+				"TODO.md"
+			],
+			[
+				"route",
+				"resources/assets/js/routes.js"
+			],
+			[
+				"compone",
+				"resources/assets/js/components.js"
+			],
+			[
+				"api.php",
+				"routes/api.php"
+			],
+			[
+				"imacontr",
+				"app/Http/Controllers/Api/ImagesController.php"
+			],
+			[
+				"tagscont",
+				"app/Http/Controllers/Api/TagsController.php"
+			],
+			[
+				"recentcon",
+				"app/Http/Controllers/Api/RecentController.php"
+			],
+			[
+				"home.v",
+				"resources/assets/js/components/mains/Home.vue"
+			],
+			[
+				"indexvue",
+				"resources/assets/js/components/mains/images/Index.vue"
+			],
+			[
+				"index.blade",
+				"resources/views/index.blade.php"
+			],
+			[
+				"destroy",
+				"app/Actions/Images/Destroy.php"
+			],
+			[
+				"store.php",
+				"app/Actions/Images/Store.php"
+			],
+			[
+				"imgeupdate",
+				"app/Http/Requests/ImageUpdateRequest.php"
+			],
+			[
+				"imaupdate.php",
+				"app/Actions/Images/Update.php"
+			],
+			[
+				"edit",
+				"app/Actions/Images/Edit.php"
+			],
+			[
+				"crea.vue",
+				"resources/assets/js/components/mains/images/Create.vue"
+			],
+			[
+				"navite",
+				"resources/assets/js/components/NavItem.vue"
+			],
+			[
+				"show.php",
+				"app/Actions/Images/Show.php"
+			],
+			[
+				"boo.js",
+				"resources/assets/js/bootstrap.js"
+			],
+			[
+				"shared/field",
+				"resources/views/shared/field-error.blade.php"
+			],
+			[
+				"app.js",
+				"resources/assets/js/app.js"
+			],
+			[
+				"tagsindex.blade",
+				"resources/views/tags/index.blade.php"
+			],
+			[
+				"index.php",
+				"app/Actions/Tags/Index.php"
+			],
+			[
+				"mig_tag_table.php",
+				"database/migrations/2017_12_21_110640_create_tags_table.php"
+			],
+			[
+				"web.php",
+				"routes/web.php"
+			],
+			[
+				"app.css",
+				"resources/assets/sass/app.scss"
+			],
+			[
+				"todo.",
+				"TODO.md"
+			],
+			[
+				"components",
+				"resources/assets/js/components.js"
+			],
+			[
+				"store",
+				"app/Actions/Images/Store.php"
+			],
+			[
+				"imcontr",
+				"app/Http/Controllers/Api/ImagesController.php"
+			],
+			[
+				"index.bla",
+				"resources/views/index.blade.php"
+			],
+			[
+				"edit.php",
+				"app/Actions/Images/Edit.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "store",
+		"selected_items":
+		[
+			[
+				"store",
+				"store"
+			]
+		],
+		"width": 374.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 221.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

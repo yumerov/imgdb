@@ -41,88 +41,31 @@
 
       <div class="field">
         <div class="control">
-            <input class="button" type="submit" value="Create" @click.prevent="submit">
-            <router-link v-if="image.lastCreated" class="button is-success"
-                :to="image.lastCreated">Created image</router-link>
+            <input class="button" type="submit" value="Create"
+                @click.prevent="submit">
+            <router-link v-if="lastCreated" class="button is-success"
+                :to="lastCreated">Created image</router-link>
         </div>
       </div>
     </form>
 </template>
 
 <script>
+import { Create as store } from "../../../stores/Images.js";
+import { previewFile, validate, errors } from "../../../mixins.js";
+
 export default {
-    data() {
-        return {
-            image: {
-                title: "",
-                tags: null,
-                file: {},
-                lastCreated: null,
-            },
-            tags: [],
-            preview: null,
-        }
+    mixins: [previewFile, validate],
+    store,
+    computed: {
+        image() { return this.$store.state.image },
+        tags() { return this.$store.state.tags },
+        preview() { return this.$store.state.preview },
+        lastCreated() { return this.$store.state.lastCreated },
     },
-    created() {
-        window.loading();
-        let vm = this;
-        axios
-            .get("/api/tags")
-            .then((response) => {
-                vm.tags = response.data.data;
-                window.loaded();
-            });
-    },
+    created() { this.$store.dispatch("get_tags") },
     methods: {
-        resetForm() {
-            this.image = {
-                title: "",
-                tags: null,
-                file: {},
-                lastCreated: "",
-            };
-
-        },
-        handleFile(event) {
-            let vm = this;
-            let file = event.target.files[0];
-            if (file.type.search("image/") != -1) {
-                vm.image.file = file;
-                vm.renderFile();
-            }
-        },
-        renderFile() {
-            let vm = this;
-            let file = vm.image.file;
-
-            if (file) {
-                let reader = new FileReader();
-                reader.onload = (e) => { vm.preview = e.target.result }
-                reader.readAsDataURL(file);
-            }
-        },
-        validateTags(value) {
-            let vm = this;
-            let tags = vm.image.tags = value;
-            console.log("tags", tags);
-            if (tags == null || tags.length == 0) {
-                vm.errors.add("tags", "Select at least 1 tag.");
-                return;
-            }
-
-            vm.errors.remove("tags");
-        },
-        formData() {
-            let vm = this;
-            let formData = new FormData();
-            formData.append("title", vm.image.title);
-            vm.image.tags.forEach((tag) => {
-                formData.append("tags[]", tag.id);
-            });
-            formData.append("file", vm.image.file);
-
-            return formData;
-        },
+        resetForm() { this.$store.commit("reset"); },
         submit() {
             let vm = this;
 
@@ -132,23 +75,14 @@ export default {
                     return;
                 }
 
-                window.loading();
-                let formData = vm.formData();
-                axios.post("/api/images", formData)
+                vm.$store.dispatch("save", vm.$store.getters["image/form"])
                     .then((response) => {
                         vm.resetForm();
                         window.flash("The image is created.", "success");
-                        vm.image.lastCreated = "/images/" + response.data.data.slug;
-                        window.loaded();
+                        vm.$store.state.lastCreated = "/images/" + response.data.data.slug;
                     })
                     .catch((error) => {
-                        let data = error.response.data;
-                        window.flash(data.message, "error");
-                        let errors = data.errors;
-                        for (let field in errors) {
-                            vm.errors.add(field, errors[field][0]);
-                        }
-                        window.loaded();
+                        vm.renderErrors(error);
                     });
             });
 

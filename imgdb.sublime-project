@@ -1,0 +1,29 @@
+{
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        "node_modules",
+        "vendor",
+        "nbproject",
+        "public/js/app.js"
+    ],
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "font_size": 7.5,
+    "line_numbers": false,
+    "margin": 0,
+    "overlay_scroll_bars": "enabled",
+    "rulers":
+    [
+        80
+    ],
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+}
