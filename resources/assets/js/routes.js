@@ -10,6 +10,9 @@ import TagsEdit from './components/mains/tags/Edit'
 import SearchTags from './components/mains/search/Tags'
 import SearchImages from './components/mains/search/Images'
 
+/**
+ * @type {*[]}
+ */
 const routes = [
     { path: '/', component: Home },
 

@@ -14,12 +14,17 @@ use App\Http\Resources\ImageSimpleResource;
 use App\Http\Resources\ImageFullResource;
 use Illuminate\Http\Request;
 
+/**
+ * Class ImagesController
+ *
+ * @package App\Http\Controllers\Api
+ */
 class ImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
@@ -30,8 +35,8 @@ class ImagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param ImageStoreRequest $request
+     * @return ImageFullResource
      */
     public function store(ImageStoreRequest $request)
     {
@@ -41,8 +46,8 @@ class ImagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
+     * @param Image $image
+     * @return ImageFullResource
      */
     public function show(Image $image)
     {
@@ -52,9 +57,9 @@ class ImagesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
+     * @param ImageUpdateRequest $request
+     * @param Image $image
+     * @return ImageFullResource
      */
     public function update(ImageUpdateRequest $request, Image $image)
     {
@@ -64,8 +69,9 @@ class ImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
+     * @param Image $image
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     public function destroy(Image $image)
     {

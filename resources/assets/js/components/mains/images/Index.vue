@@ -18,6 +18,9 @@ export default {
     },
     store,
     methods: {
+        /**
+         * @param page
+         */
         openPage(page = 1) {
             this.$store.dispatch("load", page);
         },

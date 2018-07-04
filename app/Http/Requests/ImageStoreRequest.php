@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\BaseRequest;
 
+/**
+ * Class ImageStoreRequest
+ *
+ * @package App\Http\Requests
+ */
 class ImageStoreRequest extends BaseRequest
 {
 

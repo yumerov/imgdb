@@ -18,6 +18,7 @@ export default {
             isLoading: false,
         }
     },
+
     created() {
         let vm = this;
         window.events.$on('loading', () => { vm.isLoading = true })

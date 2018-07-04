@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\BaseRequest;
 
+/**
+ * Class ImageUpdateRequest
+ *
+ * @package App\Http\Requests
+ */
 class ImageUpdateRequest extends BaseRequest
 {
 

@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\BaseRequest;
 
+/**
+ * Class TagUpdateRequest
+ *
+ * @package App\Http\Requests
+ */
 class TagUpdateRequest extends BaseRequest
 {
 

@@ -12,7 +12,11 @@ require('./events');
 import routes from './routes';
 import VueRouter from "vue-router";
 
+/**
+ * @type {VueRouter}
+ */
 const router = new VueRouter({ routes });
+
 const app = new Vue({
     el: '#app',
     router,

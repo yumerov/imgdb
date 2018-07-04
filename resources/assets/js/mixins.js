@@ -1,5 +1,12 @@
+/**
+ * @type {{methods: {redirect(*, *=): void}}}
+ */
 const redirect = {
     methods: {
+        /**
+         * @param to
+         * @param after
+         */
         redirect(to, after = 2000) {
             setTimeout(function() {
                 window.location.hash = to;
@@ -9,8 +16,15 @@ const redirect = {
     },
 }
 
+/**
+ *
+ * @type {{methods: {handleFile(*): void, renderFile(): void}}}
+ */
 const previewFile = {
     methods: {
+        /**
+         * @param event
+         */
         handleFile(event) {
             let vm = this;
             let file = event.target.files[0];
@@ -34,8 +48,15 @@ const previewFile = {
     }
 }
 
+/**
+ *
+ * @type {{methods: {validateTags(*): undefined}}}
+ */
 const validate = {
     methods: {
+        /**
+         * @param value
+         */
         validateTags(value) {
             let vm = this;
             vm.$store.state.image.tags = value;
@@ -49,8 +70,14 @@ const validate = {
     }
 }
 
+/**
+ * @type {{methods: {renderErrors(*): void}}}
+ */
 const errors = {
     methods: {
+        /**
+         * @param error
+         */
         renderErrors(error) {
             let data = error.response.data;
             let errors = data.errors;

@@ -4,6 +4,11 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
+/**
+ * Class ImageSimpleResource
+ *
+ * @package App\Http\Resources
+ */
 class ImageSimpleResource extends Resource
 {
     /**

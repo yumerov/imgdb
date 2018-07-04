@@ -3,6 +3,9 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 import { images, tags } from "./api";
 
+/**
+ * @type {{namespaced: boolean, state: {title: string, file: {}, tags: Array}, getters: {form: (function(*): FormData)}, mutations: {reset(*): void}}}
+ */
 let FormImage = {
     namespaced: true,
     state: {
@@ -11,6 +14,10 @@ let FormImage = {
         tags: [],
     },
     getters: {
+        /**
+         * @param state
+         * @returns {FormData}
+         */
         form: state => {
             let data = new FormData();
             data.append("title", state.title);
@@ -23,6 +30,9 @@ let FormImage = {
         },
     },
     mutations: {
+        /**
+         * @param state
+         */
         reset (state) {
             state.title = "";
             state.file = {};
@@ -31,12 +41,20 @@ let FormImage = {
     },
 };
 
+/**
+ * @type {Store}
+ */
 const Index = new Vuex.Store({
     state: {
         images: [],
         meta: {},
     },
     actions: {
+        /**
+         * @param state
+         * @param page
+         * @returns {*}
+         */
         load ({ state }, page = 1) {
             return images.paginate(page).then((data) => {
                 state.images = data.data;
@@ -47,6 +65,9 @@ const Index = new Vuex.Store({
     }
 })
 
+/**
+ * @type {Store}
+ */
 const Create = new Vuex.Store({
     modules: {
         image: FormImage,
@@ -57,19 +78,35 @@ const Create = new Vuex.Store({
         preview: "",
     },
     actions: {
+        /**
+         * @param commit
+         * @param state
+         */
         get_tags ({ commit, state }) {
             tags.get().then((data) => state.tags = data.data);
         },
+        /**
+         * @param state
+         * @param commit
+         */
         reset ({ state, commit }) {
             state.preview = "";
             commit("image/reset");
         },
+        /**
+         * @param commit
+         * @param data
+         * @returns {*|Promise<any>}
+         */
         save ({ commit }, data) {
             return images.create(data);
         }
     }
 })
 
+/**
+ * @type {Store}
+ */
 const Show = new Vuex.Store({
     state: {
         image: {},
@@ -79,6 +116,11 @@ const Show = new Vuex.Store({
         }
     },
     actions: {
+        /**
+         * @param state
+         * @param slug
+         * @returns {*}
+         */
         show ({ state, }, slug) {
             return images.show(slug)
                 .then((data) => {
@@ -93,6 +135,10 @@ const Show = new Vuex.Store({
 
                 });
         },
+        /**
+         * @param slug
+         * @returns {Promise<T>}
+         */
         destroy ({}, slug) {
             return images.destroy(slug)
                 .then((response) => {
@@ -103,6 +149,9 @@ const Show = new Vuex.Store({
     }
 })
 
+/**
+ * @type {Store}
+ */
 const Edit = new Vuex.Store({
     modules: {
         image: FormImage,
@@ -112,6 +161,10 @@ const Edit = new Vuex.Store({
         preview: "",
     },
     actions: {
+        /**
+         * @param state
+         * @param slug
+         */
         load({ state }, slug) {
             tags.get()
                 .then((data) => state.tags = data.data)
@@ -141,6 +194,11 @@ const Edit = new Vuex.Store({
                         });
                 });
         },
+        /**
+         * @param state
+         * @param getters
+         * @returns {*|Promise<any>}
+         */
         save({ state, getters }) {
            return images.update(state.image.slug, getters["image/form"]);
         }

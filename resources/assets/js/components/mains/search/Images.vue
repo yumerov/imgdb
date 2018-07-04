@@ -79,6 +79,9 @@ export default {
             });
     },
     methods: {
+        /**
+         * @param value
+         */
         changeNegative(value) {
             if (value.length == 0) {
                 return;
@@ -95,6 +98,9 @@ export default {
             }
             vm.search.positive_tags = vm.search.positive_tags.filter(not_excluded);
         },
+        /**
+         * @param value
+         */
         changePositive(value) {
             if (value.length == 0) {
                 return;
@@ -111,6 +117,9 @@ export default {
             }
             vm.search.negative_tags = vm.search.negative_tags.filter(not_excluded);
         },
+        /**
+         * @param page
+         */
         openPage(page = 1) {
             let vm = this;
             let url = "/api/search/images";
@@ -119,11 +128,17 @@ export default {
             data.params.page = page;
             axios.get(url, data).then(this.handleResponse);
         },
+        /**
+         * @param response
+         */
         handleResponse(response) {
             let d = response.data;
             this.results = d.data;
             this.meta = d.meta;
         },
+        /**
+         * @returns {any}
+         */
         transformSearchData() {
             let vm = this;
             let data = JSON.parse(JSON.stringify(vm.search)); // deep clone

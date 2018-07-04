@@ -7,6 +7,11 @@ use \Carbon\Carbon;
 use \Exception;
 // use Illuminate\Console\Command;
 
+/**
+ * Class Export
+ *
+ * @package App\Console\Commands
+ */
 class Export extends DataCommand
 {
     /**

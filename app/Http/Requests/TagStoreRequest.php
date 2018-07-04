@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\BaseRequest;
 
+/**
+ * Class TagStoreRequest
+ *
+ * @package App\Http\Requests
+ */
 class TagStoreRequest extends BaseRequest
 {
 

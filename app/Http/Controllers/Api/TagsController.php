@@ -11,12 +11,18 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\TagResource;
 use Illuminate\Http\Request;
 
+/**
+ * Class TagsController
+ *
+ * @package App\Http\Controllers\Api
+ */
 class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
@@ -38,8 +44,8 @@ class TagsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
+     * @param Tag $tag
+     * @return TagResource
      */
     public function show(Tag $tag)
     {
@@ -49,8 +55,8 @@ class TagsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param TagStoreRequest $request
+     * @return TagResource
      */
     public function store(TagStoreRequest $request)
     {
@@ -61,9 +67,9 @@ class TagsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
+     * @param TagUpdateRequest $request
+     * @param Tag $tag
+     * @return TagResource
      */
     public function update(TagUpdateRequest $request, Tag $tag)
     {
@@ -74,8 +80,9 @@ class TagsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tag  $tag
-     * @return \Illuminate\Http\Response
+     * @param Tag $tag
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     public function destroy(Tag $tag)
     {

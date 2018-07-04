@@ -6,8 +6,18 @@ use App\Image;
 use App\Http\Requests\ImageUpdateRequest;
 use App\Http\Resources\ImageFullResource;
 
+/**
+ * Class Update
+ *
+ * @package App\Actions\Images
+ */
 class Update {
 
+    /**
+     * @param ImageUpdateRequest $request
+     * @param Image $image
+     * @return ImageFullResource
+     */
     public function handle(ImageUpdateRequest $request, Image $image) {
         $file = $request->file('file');
 

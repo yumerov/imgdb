@@ -6,7 +6,11 @@ use \File;
 use \Zip;
 // use Illuminate\Console\Command;
 
-
+/**
+ * Class Restore
+ *
+ * @package App\Console\Commands
+ */
 class Restore extends DataCommand
 {
     /**
@@ -33,6 +37,9 @@ class Restore extends DataCommand
         parent::__construct();
     }
 
+    /**
+     * @return null
+     */
     protected function getFilePath() {
         $files = File::glob(storage_path('backups') . '/*.zip');
         $files = array_reverse($files);
@@ -53,6 +60,9 @@ class Restore extends DataCommand
         return $file;
     }
 
+    /**
+     * @param $path
+     */
     protected function extract($path) {
         $zip = Zip::open($path);
         $files = collect($zip->listFiles())->filter(function ($file) {
