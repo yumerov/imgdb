@@ -2,14 +2,31 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 
+/**
+ * Class DuskTestCase
+ *
+ * @package Tests
+ */
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
+    use DatabaseMigrations;
+
+    /**
+     * @{@inheritdoc}
+     */
+    function setUp()
+    {
+        parent::setUp();
+
+        $this->seed();
+    }
 
     /**
      * Prepare for Dusk test execution.
@@ -31,7 +48,8 @@ abstract class DuskTestCase extends BaseTestCase
     {
         $options = (new ChromeOptions)->addArguments([
             '--disable-gpu',
-            '--headless'
+            '--headless',
+            '--window-size=1440,1200',
         ]);
 
         return RemoteWebDriver::create(

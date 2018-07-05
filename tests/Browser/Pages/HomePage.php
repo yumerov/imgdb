@@ -4,6 +4,11 @@ namespace Tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 
+/**
+ * Class HomePage
+ *
+ * @package Tests\Browser\Pages
+ */
 class HomePage extends Page
 {
     /**
@@ -24,18 +29,8 @@ class HomePage extends Page
      */
     public function assert(Browser $browser)
     {
-        //
-    }
-
-    /**
-     * Get the element shortcuts for the page.
-     *
-     * @return array
-     */
-    public function elements()
-    {
-        return [
-            '@element' => '#selector',
-        ];
+        $browser->assertPathIs($this->url());
+        $browser->assertSee("Recent images");
+        $browser->assertSee("Recent tags");
     }
 }
